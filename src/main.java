@@ -1,7 +1,8 @@
+import java.util.Scanner;
+
 public class main {
     //启动游戏
-    public static void main(){
+    public static void main(String[] args){
 
     }
-
 }
