@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70d5d56a-bea3-4810-8471-643496b8dcdc" name="Default Changelist" comment="">
+    <list default="true" id="70d5d56a-bea3-4810-8471-643496b8dcdc" name="Default Changelist" comment="&lt;ADD&gt; Test module">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/MineSweeper/ScreenPrintTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GridType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GridType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MineSweeper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MineSweeper.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GridType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GridType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +32,9 @@
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1ZqTxz6IjNuItNjOmcfffaQFBM8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -40,7 +46,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -56,6 +71,7 @@
       <workItem from="1585569870446" duration="89000" />
       <workItem from="1585787809536" duration="1121000" />
       <workItem from="1585789190434" duration="6241000" />
+      <workItem from="1585809735241" duration="3430000" />
     </task>
     <servers />
   </component>
@@ -63,7 +79,8 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="&lt;ADD&gt; Test module" />
+    <option name="LAST_COMMIT_MESSAGE" value="&lt;ADD&gt; Test module" />
   </component>
   <component name="WindowStateProjectService">
     <state x="889" y="428" key="#com.intellij.ide.util.MemberChooser" timestamp="1585807129209">
@@ -71,11 +88,32 @@
     </state>
     <state x="500" y="228" key="#com.intellij.ide.util.MemberChooser/0.23.1440.823@0.23.1440.823" timestamp="1585793709438" />
     <state x="889" y="428" key="#com.intellij.ide.util.MemberChooser/0.23.2560.1359@0.23.2560.1359" timestamp="1585807129209" />
-    <state x="475" y="23" key="CommitChangelistDialog2" timestamp="1585807717558">
-      <screen x="0" y="23" width="2560" height="1359" />
+    <state x="492" y="237" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585809744421">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
+    <state x="492" y="237" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.689@0.0.1280.689" timestamp="1585809744421" />
+    <state x="471" y="62" width="549" height="565" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1585826709195">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="471" y="62" width="549" height="565" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1280.689@0.0.1280.689" timestamp="1585826709195" />
+    <state x="238" y="0" width="1015" height="689" key="CommitChangelistDialog2" timestamp="1585826820370">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="238" y="0" width="1015" height="689" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1585826820370" />
     <state x="267" y="23" key="CommitChangelistDialog2/0.23.1440.823@0.23.1440.823" timestamp="1585797665929" />
     <state x="475" y="23" key="CommitChangelistDialog2/0.23.2560.1359@0.23.2560.1359" timestamp="1585807717558" />
+    <state x="93" y="93" width="1095" height="504" key="DiffContextDialog" timestamp="1585812079196">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="93" y="93" width="1095" height="504" key="DiffContextDialog/0.0.1280.689@0.0.1280.689" timestamp="1585812079196" />
+    <state x="421" y="103" key="FileChooserDialogImpl" timestamp="1585826708019">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="421" y="103" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1585826708019" />
+    <state x="121" y="0" key="SettingsEditor" timestamp="1585826713074">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="121" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1585826713074" />
     <state x="709" y="423" key="com.intellij.ide.util.TipDialog" timestamp="1585787810167">
       <screen x="0" y="23" width="2560" height="1359" />
     </state>
@@ -89,6 +127,10 @@
       <screen x="0" y="23" width="2560" height="1359" />
     </state>
     <state x="1297" y="347" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1585807307924" />
+    <state x="340" y="147" key="git4idea.merge.GitPullDialog" timestamp="1585825556786">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="340" y="147" key="git4idea.merge.GitPullDialog/0.0.1280.689@0.0.1280.689" timestamp="1585825556786" />
     <state x="365" y="170" width="670" height="676" key="search.everywhere.popup" timestamp="1585793451787">
       <screen x="0" y="23" width="1440" height="823" />
     </state>

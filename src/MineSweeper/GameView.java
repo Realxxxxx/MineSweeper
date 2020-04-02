@@ -1,10 +1,12 @@
+package MineSweeper;
+
 import java.util.Scanner;
 
 public class GameView {
     //根据grid的属性来绘制对应的格子
-    public void drawGame(Grid grids[][]){
+    public void drawGame(Grid[][] grids){
         //
-        int x=0,y=0;
+        int x, y;
         //最大行列数设定为20
         //没有翻开为 □ ，empty为■，BOOM为×，Flag为♠ 
 
@@ -20,7 +22,7 @@ public class GameView {
 
         System.out.print("\n");
 
-        for(  y = 0; y <= 19; y++ ){
+        for(y = 0; y <= 19; y++){
 
             System.out.print(y+1);
             if(y<9)
@@ -28,17 +30,17 @@ public class GameView {
 
             for( x = 0 ; x <= 19; x++){
                 Grid griddraw = new Grid(x,y);
-                if(griddraw.getType() == FLAG)
+                if(griddraw.getType() == GridType.FLAG)
                     System.out.print(" ♠ ");
-                else if(griddraw.isSelected() == false)
+                else if(!griddraw.isSelected())
                     System.out.print(" □ ");
-                else if(griddraw.getType() == EMPTY )
+                else if(griddraw.getType() == GridType.EMPTY )
                     System.out.print(" ■ ");
-                else if(griddraw.getType() == BOOM)
+                else if(griddraw.getType() == GridType.BOOM)
                     System.out.print(" × ");
-                else if(griddraw.getType() == DANGEROUS){
+                else if(griddraw.getType() == GridType.DANGEROUS){
                     System.out.print(" ");
-                    System.out.print(griddraw.getboomsAround());
+                    System.out.print(griddraw.getBoomsAround());
                     System.out.print(" ");
                 }
 

@@ -1,3 +1,5 @@
+package MineSweeper;
+
 public class Grid {
     private int x;
     private int y;//格子的坐标

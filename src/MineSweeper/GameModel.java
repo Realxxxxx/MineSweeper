@@ -1,3 +1,5 @@
+package MineSweeper;
+
 import java.util.Vector;
 
 public class GameModel {
@@ -26,21 +28,21 @@ public class GameModel {
 
     //翻开gird之后的操作
     public int filpGrid(Grid[][] grids, int x, int y){
-        Vector<Grid> gridQueue = new Vector<Grid>();
+        Vector<Grid> gridQueue = new Vector<>();
         gridQueue.add(grids[x][y]);
         //refactor
         while (!gridQueue.isEmpty()){
             gridQueue.remove(0);
-            if (x!=0 && grids[x-1][y].isSelected() == false){
+            if (x!=0 && !grids[x-1][y].isSelected()){
                 gridQueue.add(grids[x-1][y]);
             }
-            if (y!=0 && grids[x][y-1].isSelected() == false){
+            if (y!=0 && !grids[x][y-1].isSelected()){
                 gridQueue.add(grids[x][y-1]);
             }
-            if (x!=bounds-1 && grids[x+1][y].isSelected() == false){
+            if (x!=bounds-1 && !grids[x+1][y].isSelected()){
                 gridQueue.add(grids[x+1][y]);
             }
-            if (y!=bounds-1 && grids[x][y+1].isSelected() == false){
+            if (y!=bounds-1 && !grids[x][y+1].isSelected()){
                 gridQueue.add(grids[x][y+1]);
             }
         }
