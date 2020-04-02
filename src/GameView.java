@@ -55,6 +55,7 @@ public class GameView {
         controller.sendToModel();
 
     }
+    //具体输入函数
     public static int[] inputBoundsandBoom(String message) {
     	int[] bb = new int[2];
     	//bb[0]为边界，bb[1]为雷数

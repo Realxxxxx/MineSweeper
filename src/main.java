@@ -1,4 +1,4 @@
-import java.util.Scanner;
+
 
 public class main {
     //启动游戏
