@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70d5d56a-bea3-4810-8471-643496b8dcdc" name="Default Changelist" comment="&lt;ADD&gt; Test module">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/MineSweeper/ScreenPrintTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="70d5d56a-bea3-4810-8471-643496b8dcdc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Test/MineSweeper/FlagTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/MineSweeper/GameEventTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/MineSweeper/MapGenerateTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MineSweeper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MineSweeper.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GridType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GridType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,12 +64,56 @@
       <workItem from="1585569870446" duration="89000" />
       <workItem from="1585787809536" duration="1121000" />
       <workItem from="1585789190434" duration="6241000" />
-      <workItem from="1585809735241" duration="3430000" />
+      <workItem from="1585809735241" duration="3597000" />
     </task>
+    <task id="LOCAL-00001" summary="&lt;ADD&gt; Test module">
+      <created>1585826946979</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585826946979</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&lt;ADD&gt; Test module" />
@@ -96,10 +133,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="471" y="62" width="549" height="565" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1280.689@0.0.1280.689" timestamp="1585826709195" />
-    <state x="238" y="0" width="1015" height="689" key="CommitChangelistDialog2" timestamp="1585826820370">
+    <state x="238" y="0" width="1015" height="689" key="CommitChangelistDialog2" timestamp="1585826945830">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="238" y="0" width="1015" height="689" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1585826820370" />
+    <state x="238" y="0" width="1015" height="689" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1585826945830" />
     <state x="267" y="23" key="CommitChangelistDialog2/0.23.1440.823@0.23.1440.823" timestamp="1585797665929" />
     <state x="475" y="23" key="CommitChangelistDialog2/0.23.2560.1359@0.23.2560.1359" timestamp="1585807717558" />
     <state x="93" y="93" width="1095" height="504" key="DiffContextDialog" timestamp="1585812079196">
@@ -114,14 +151,19 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="121" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1585826713074" />
+    <state x="233" y="81" key="Vcs.Push.Dialog.v2" timestamp="1585827009800">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="233" y="81" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1585827009800" />
     <state x="709" y="423" key="com.intellij.ide.util.TipDialog" timestamp="1585787810167">
       <screen x="0" y="23" width="2560" height="1359" />
     </state>
     <state x="399" y="263" key="com.intellij.ide.util.TipDialog/0.23.1440.816@0.23.1440.816" timestamp="1585565882234" />
     <state x="709" y="423" key="com.intellij.ide.util.TipDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1585787810167" />
-    <state x="489" y="335" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585797639869">
-      <screen x="0" y="23" width="1440" height="823" />
+    <state x="435" y="261" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585827103492">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
+    <state x="435" y="261" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.689@0.0.1280.689" timestamp="1585827103492" />
     <state x="489" y="335" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.823@0.23.1440.823" timestamp="1585797639869" />
     <state x="1297" y="347" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1585807307924">
       <screen x="0" y="23" width="2560" height="1359" />
