@@ -1,3 +1,3 @@
 public enum GridType {
-    BOOM,EMPTY,DANGEROUS
+    BOOM,EMPTY,DANGEROUS,FLAG
 }
