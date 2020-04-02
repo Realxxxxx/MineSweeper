@@ -38,7 +38,7 @@ public class GameView {
                     System.out.print(" × ");
                 else if(griddraw.getType() == DANGEROUS){
                     System.out.print(" ");
-                    System.out.print(griddraw.boomsAround);
+                    System.out.print(griddraw.getboomsAround());
                     System.out.print(" ");
                 }
 
