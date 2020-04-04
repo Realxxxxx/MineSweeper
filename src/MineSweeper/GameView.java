@@ -50,18 +50,12 @@ public class GameView {
 
 
     }
-    //检测输入事件，传给controller
-    public void getClicked(){
 
-        GameController controller = new GameController();
-        controller.sendToModel();
-
-    }
     //具体输入函数
-    public static int[] inputBoundsandBoom(String message) {
+    public static int[] inputBoundsandBoom() {
     	int[] bb = new int[2];
     	//bb[0]为边界，bb[1]为雷数
-    	System.out.println(message);
+        System.out.println("请输入棋盘大小和地雷数目");
     	Scanner scan = new Scanner(System.in);
     	while(true) {
             if (scan.hasNextLine()) {
@@ -74,14 +68,12 @@ public class GameView {
             	break;
             System.out.println("输入不合法，请重新输入");
     	}
-
         scan.close();
         return bb;
     }
     
-    public static int[] inputCo(String message, int bounds) {
+    public static int[] inputCo(int bounds) {
     	int[] coordinate = new int[2];
-    	System.out.println(message);
     	Scanner scan = new Scanner(System.in);
     	while(true) {
             if (scan.hasNextLine()) {
@@ -99,10 +91,9 @@ public class GameView {
         return coordinate;
     }
     
-    public static int inputFliporBoom(String message) {
+    public static int inputFliporBoom() {
     	//mode=1为揭开格子，mode=2为插旗
     	int mode = 0;
-    	System.out.println(message);
     	Scanner scan = new Scanner(System.in);
     	while(true) {
             if (scan.hasNextLine()) {

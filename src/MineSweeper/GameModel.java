@@ -23,7 +23,11 @@ public class GameModel {
     }
 
     //初始化盘大小，地雷数目，grids
-    public void initGame(){
+    public Grid[][] initGame(int bounds,int numOfBooms){
+        Grid[][] grids = new Grid[bounds][bounds];
+
+
+        return  grids;
     }
 
     //翻开gird之后的操作
@@ -82,8 +86,8 @@ public class GameModel {
     }
 
     //响应view消息改变Grid的属性
-    public void changeGridAttr(){
-
+    public void changeGridAttr(Grid[][] grids, int x, int y){
+        grids[x][y].setType(GridType.FLAG);
     }
 
 

@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70d5d56a-bea3-4810-8471-643496b8dcdc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MineSweeper/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/Grid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +57,7 @@
       <workItem from="1585569870446" duration="89000" />
       <workItem from="1585787809536" duration="1121000" />
       <workItem from="1585789190434" duration="6241000" />
-      <workItem from="1585928953421" duration="1301000" />
+      <workItem from="1585928953421" duration="5525000" />
     </task>
     <servers />
   </component>
@@ -73,9 +72,10 @@
       <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state x="300" y="76" key="#Project_Structure/0.23.1440.827@0.23.1440.827" timestamp="1585840466968" />
-    <state x="889" y="428" key="#com.intellij.ide.util.MemberChooser" timestamp="1585807129209">
-      <screen x="0" y="23" width="2560" height="1359" />
+    <state x="500" y="266" key="#com.intellij.ide.util.MemberChooser" timestamp="1585964045437">
+      <screen x="0" y="23" width="1440" height="816" />
     </state>
+    <state x="500" y="266" key="#com.intellij.ide.util.MemberChooser/0.23.1440.816@0.23.1440.816" timestamp="1585964045437" />
     <state x="500" y="228" key="#com.intellij.ide.util.MemberChooser/0.23.1440.823@0.23.1440.823" timestamp="1585793709438" />
     <state x="889" y="428" key="#com.intellij.ide.util.MemberChooser/0.23.2560.1359@0.23.2560.1359" timestamp="1585807129209" />
     <state x="267" y="23" key="CommitChangelistDialog2" timestamp="1585963470138">
