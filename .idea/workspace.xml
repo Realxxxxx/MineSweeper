@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70d5d56a-bea3-4810-8471-643496b8dcdc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +53,7 @@
       <workItem from="1585569870446" duration="89000" />
       <workItem from="1585787809536" duration="1121000" />
       <workItem from="1585789190434" duration="6241000" />
-      <workItem from="1585928953421" duration="5525000" />
+      <workItem from="1585928953421" duration="5839000" />
     </task>
     <servers />
   </component>

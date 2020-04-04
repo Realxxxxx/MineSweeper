@@ -25,7 +25,17 @@ public class GameModel {
     //初始化盘大小，地雷数目，grids
     public Grid[][] initGame(int bounds,int numOfBooms){
         Grid[][] grids = new Grid[bounds][bounds];
-
+        int count = 0;
+        //显然错的生成方式
+        for (int i = 0; i <bounds ; i++) {
+            for (int j = 0; j <bounds ; j++) {
+                if (count<numOfBooms){
+                    grids[i][j].setType(GridType.BOOM);
+                }else{
+                    grids[i][j].setType(GridType.EMPTY);
+                }
+            }
+        }
 
         return  grids;
     }
@@ -35,7 +45,7 @@ public class GameModel {
         Vector<Grid> gridQueue = new Vector<>();
         gridQueue.add(grids[x][y]);
         grids[x][y].setSelected(true);
-        if (isWin(grids,x,y)){
+        if (isWin(grids,x,y)==false){
             return -1;
         }
         //规则：上下左右的牌，1.已翻开的不加入队列 2.炸弹不加入队列 3.数字不加入队列 但是要翻开 4.棋子不加入队列
@@ -82,6 +92,9 @@ public class GameModel {
         if (grids[x][y].getType() == GridType.BOOM && grids[x][y].isSelected()){
             return false;
         }
+
+
+
         return true;
     }
 
