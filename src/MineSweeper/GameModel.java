@@ -30,28 +30,55 @@ public class GameModel {
     public int filpGrid(Grid[][] grids, int x, int y){
         Vector<Grid> gridQueue = new Vector<>();
         gridQueue.add(grids[x][y]);
-        //refactor
+        grids[x][y].setSelected(true);
+        if (isWin(grids,x,y)){
+            return -1;
+        }
+        //规则：上下左右的牌，1.已翻开的不加入队列 2.炸弹不加入队列 3.数字不加入队列 但是要翻开 4.棋子不加入队列
         while (!gridQueue.isEmpty()){
             gridQueue.remove(0);
-            if (x!=0 && !grids[x-1][y].isSelected()){
-                gridQueue.add(grids[x-1][y]);
+            if (x!=0) {
+                if (grids[x-1][y].getType() == GridType.EMPTY) {
+                    gridQueue.add(grids[x - 1][y]);
+                    grids[x - 1][y].setSelected(true);
+                }else if (grids[x-1][y].getType() == GridType.DANGEROUS) {
+                    grids[x - 1][y].setSelected(true);
+                }
             }
-            if (y!=0 && !grids[x][y-1].isSelected()){
-                gridQueue.add(grids[x][y-1]);
+            if (y!=0){
+                if (grids[x][y-1].getType() == GridType.EMPTY) {
+                    gridQueue.add(grids[x][y-1]);
+                    grids[x][y-1].setSelected(true);
+                }else if (grids[x][y-1].getType() == GridType.DANGEROUS) {
+                    grids[x][y-1].setSelected(true);
+                }
             }
-            if (x!=bounds-1 && !grids[x+1][y].isSelected()){
-                gridQueue.add(grids[x+1][y]);
+            if (x!=bounds-1){
+                if (grids[x+1][y].getType() == GridType.EMPTY) {
+                    gridQueue.add(grids[x + 1][y]);
+                    grids[x + 1][y].setSelected(true);
+                }else if (grids[x+1][y].getType() == GridType.DANGEROUS) {
+                    grids[x + 1][y].setSelected(true);
+                }
             }
-            if (y!=bounds-1 && !grids[x][y+1].isSelected()){
-                gridQueue.add(grids[x][y+1]);
+            if (y!=bounds-1){
+                if (grids[x][y+1].getType() == GridType.EMPTY) {
+                    gridQueue.add(grids[x][y+1]);
+                    grids[x][y+1].setSelected(true);
+                }else if (grids[x][y+1].getType() == GridType.DANGEROUS) {
+                    grids[x][y+1].setSelected(true);
+                }
             }
         }
         return 1;
     }
 
     //判断胜利
-    public void isWin(){
-
+    public boolean isWin(Grid[][] grids, int x, int y){
+        if (grids[x][y].getType() == GridType.BOOM && grids[x][y].isSelected()){
+            return false;
+        }
+        return true;
     }
 
     //响应view消息改变Grid的属性

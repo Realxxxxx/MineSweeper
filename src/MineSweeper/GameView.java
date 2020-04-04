@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class GameView {
     //根据grid的属性来绘制对应的格子
-    public void drawGame(Grid[][] grids){
+    public void drawGame(Grid grids[][]){
         //
-        int x, y;
+        int x=0,y=0;
         //最大行列数设定为20
         //没有翻开为 □ ，empty为■，BOOM为×，Flag为♠ 
 
@@ -22,7 +22,7 @@ public class GameView {
 
         System.out.print("\n");
 
-        for(y = 0; y <= 19; y++){
+        for(  y = 0; y <= 19; y++ ){
 
             System.out.print(y+1);
             if(y<9)
@@ -32,7 +32,7 @@ public class GameView {
                 Grid griddraw = new Grid(x,y);
                 if(griddraw.getType() == GridType.FLAG)
                     System.out.print(" ♠ ");
-                else if(!griddraw.isSelected())
+                else if(griddraw.isSelected() == false)
                     System.out.print(" □ ");
                 else if(griddraw.getType() == GridType.EMPTY )
                     System.out.print(" ■ ");
