@@ -27,7 +27,6 @@ public class GameModel {
     //初始化盘大小，地雷数目，grids
     public Grid[][] initGame(int bounds, int numOfBooms){
         Grid[][] grids = new Grid[bounds][bounds];
-
         // 生成地图
         for (int i = 0; i <bounds ; i++) {
             for (int j = 0; j <bounds ; j++) {
@@ -173,7 +172,7 @@ public class GameModel {
         if (flag == 0){
             return 1;
         }
-
+        this.grids = grids;
 
         return 0;
     }
@@ -181,6 +180,7 @@ public class GameModel {
     //响应view消息改变Grid的属性
     public void changeGridAttr(Grid[][] grids, int x, int y){
         grids[x][y].setType(GridType.FLAG);
+        this.grids = grids;
     }
 
 

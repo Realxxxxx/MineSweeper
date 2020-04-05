@@ -20,6 +20,8 @@ public class GameView {
         //
         int horizontalLength = grids[0].length;   // 列数
         int verticalLength = grids.length;        // 行数
+
+
         //最大行列数设定为20
         //没有翻开为 □ ，empty为■，BOOM为×，Flag为♠
         System.out.print(" ");
@@ -48,13 +50,13 @@ public class GameView {
                 System.out.print(" ");
 
             for (int x = 0; x < horizontalLength; x++) {
-                Grid griddraw = new Grid(x, y);
+                Grid griddraw = grids[x][y];
                 if (griddraw.getType() == GridType.FLAG)
                     System.out.print(" ♠ ");
                 else if (griddraw.isSelected() == false)
-                    System.out.print(" □ ");
-                else if (griddraw.getType() == GridType.EMPTY)
                     System.out.print(" ■ ");
+                else if (griddraw.getType() == GridType.EMPTY)
+                    System.out.print(" □ ");
                 else if (griddraw.getType() == GridType.BOOM)
                     System.out.print(" × ");
                 else if (griddraw.getType() == GridType.DANGEROUS) {
@@ -136,22 +138,22 @@ public class GameView {
                 coordinate[2] = Integer.parseInt(buff[2]); // perform
             }
 
-            if ((coordinate[2] == 1 || coordinate[2] == 2)) {
+            if ((coordinate[2] != 1 && coordinate[2] != 2)) {
                 System.out.println("操作参数请确定1和2");
                 coordinate = new int[]{0, 0, -1}; // 第三个值返回-1 代表操作参数出界
                 break;
             }
 
-            if (!grids[coordinate[0]][coordinate[1]].isSelected()) {
+            if (grids[coordinate[0]][coordinate[1]].isSelected()) {
                 System.out.println("选中的格子已经打开");
                 coordinate = new int[]{coordinate[0], coordinate[1], -2}; // 第三个值返回-2 代表操作失败
                 break;
             }
 
-            if (coordinate[0] < bounds
+            if (!(coordinate[0] < bounds
                     && coordinate[0] >= 0
                     && coordinate[1] < bounds
-                    && coordinate[1] >= 0) {
+                    && coordinate[1] >= 0)) {
                 System.out.println("输入坐标出界");
                 coordinate[2] = -3; // 第三个值返回-3 代表坐标出界
                 break;
