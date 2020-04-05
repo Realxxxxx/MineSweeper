@@ -23,7 +23,6 @@ public class GameController {
         while (true){
             int[] pos = this.view.inputCo(args[0], this.model.grids);
             int isOver = 0;
-            System.out.println(pos[2]);
             if (pos[2] == 1) {
                 isOver = this.model.filpGrid(this.model.grids, pos[0], pos[1]);
             }else{
