@@ -31,7 +31,7 @@ public class InputTest {
         String inputStr = "10 20";
         InputStream is = new ByteArrayInputStream(inputStr.getBytes());
         controller.view.setInStream(is);
-        int[] bb = controller.view.inputBoundsandBoom();
+        int[] bb = controller.view.inputBoundAndBoom();
         int[] expected = new int[]{10 ,20};
         assertEquals(expected[0], bb[0], 0.001);
         assertEquals(expected[1], bb[1], 0.001);
@@ -43,7 +43,7 @@ public class InputTest {
         String inputStr = "10 100";
         InputStream is = new ByteArrayInputStream(inputStr.getBytes());
         controller.view.setInStream(is);
-        int[] bb = controller.view.inputBoundsandBoom();
+        int[] bb = controller.view.inputBoundAndBoom();
         int[] expected = new int[]{10 ,-1};
         assertEquals(expected[0], bb[0], 0.001);
         assertEquals(expected[1], bb[1], 0.001);
@@ -56,7 +56,7 @@ public class InputTest {
         String inputStr = "10 99";
         InputStream is = new ByteArrayInputStream(inputStr.getBytes());
         controller.view.setInStream(is);
-        int[] bb = controller.view.inputBoundsandBoom();
+        int[] bb = controller.view.inputBoundAndBoom();
         int[] expected = new int[]{10 ,99};
         assertEquals(expected[0], bb[0], 0.001);
         assertEquals(expected[1], bb[1], 0.001);
@@ -69,7 +69,7 @@ public class InputTest {
         String inputStr = "10 101";
         InputStream is = new ByteArrayInputStream(inputStr.getBytes());
         controller.view.setInStream(is);
-        int[] bb = controller.view.inputBoundsandBoom();
+        int[] bb = controller.view.inputBoundAndBoom();
         int[] expected = new int[]{10 ,-1};
         assertEquals(expected[0], bb[0], 0.001);
         assertEquals(expected[1], bb[1], 0.001);
@@ -82,7 +82,7 @@ public class InputTest {
         String inputStr = "-100 1";
         InputStream is = new ByteArrayInputStream(inputStr.getBytes());
         controller.view.setInStream(is);
-        int[] bb = controller.view.inputBoundsandBoom();
+        int[] bb = controller.view.inputBoundAndBoom();
         int[] expected = new int[]{-1 ,1};
         assertEquals(expected[0], bb[0], 0.001);
         assertEquals(expected[1], bb[1], 0.001);
@@ -94,7 +94,7 @@ public class InputTest {
         String inputStr = "10 -100";
         InputStream is = new ByteArrayInputStream(inputStr.getBytes());
         controller.view.setInStream(is);
-        int[] bb = controller.view.inputBoundsandBoom();
+        int[] bb = controller.view.inputBoundAndBoom();
         int[] expected = new int[]{10 ,-1};
         assertEquals(expected[0], bb[0], 0.001);
         assertEquals(expected[1], bb[1], 0.001);
@@ -105,7 +105,7 @@ public class InputTest {
         String inputStr = "-100 -100";
         InputStream is = new ByteArrayInputStream(inputStr.getBytes());
         controller.view.setInStream(is);
-        int[] bb = controller.view.inputBoundsandBoom();
+        int[] bb = controller.view.inputBoundAndBoom();
         int[] expected = new int[]{-1 ,-1};
         assertEquals(expected[0], bb[0], 0.001);
         assertEquals(expected[1], bb[1], 0.001);
@@ -117,7 +117,7 @@ public class InputTest {
         String inputStr = "  10 5  ";
         InputStream is = new ByteArrayInputStream(inputStr.getBytes());
         controller.view.setInStream(is);
-        int[] bb = controller.view.inputBoundsandBoom();
+        int[] bb = controller.view.inputBoundAndBoom();
         int[] expected = new int[]{10 ,5};
         assertEquals(expected[0], bb[0], 0.001);
         assertEquals(expected[1], bb[1], 0.001);
@@ -128,7 +128,7 @@ public class InputTest {
         String inputStr = "10, 5";
         InputStream is = new ByteArrayInputStream(inputStr.getBytes());
         controller.view.setInStream(is);
-        int[] bb = controller.view.inputBoundsandBoom();
+        int[] bb = controller.view.inputBoundAndBoom();
         int[] expected = new int[]{10 ,5};
         assertEquals(expected[0], bb[0], 0.001);
         assertEquals(expected[1], bb[1], 0.001);
@@ -140,7 +140,7 @@ public class InputTest {
         String inputStr = "10";
         InputStream is = new ByteArrayInputStream(inputStr.getBytes());
         controller.view.setInStream(is);
-        int[] bb = controller.view.inputBoundsandBoom();
+        int[] bb = controller.view.inputBoundAndBoom();
         int[] expected = new int[]{-2 ,-2};
         assertEquals(expected[0], bb[0], 0.001);
         assertEquals(expected[1], bb[1], 0.001);
@@ -152,7 +152,7 @@ public class InputTest {
         String inputStr = "10, 5, 20";
         InputStream is = new ByteArrayInputStream(inputStr.getBytes());
         controller.view.setInStream(is);
-        int[] bb = controller.view.inputBoundsandBoom();
+        int[] bb = controller.view.inputBoundAndBoom();
         int[] expected = new int[]{-2 ,-2};
         assertEquals(expected[0], bb[0], 0.001);
         assertEquals(expected[1], bb[1], 0.001);

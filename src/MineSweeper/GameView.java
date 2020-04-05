@@ -51,9 +51,10 @@ public class GameView {
 
             for (int x = 0; x < horizontalLength; x++) {
                 Grid griddraw = grids[x][y];
-                if (griddraw.getType() == GridType.FLAG)
-                    System.out.print(" ♠ ");
-                else if (griddraw.isSelected() == false)
+                if (griddraw.isFlag())
+//                    System.out.print(" ♠ ");
+                    System.out.print(" F ");
+                else if (!griddraw.isSelected())
                     System.out.print(" ■ ");
                 else if (griddraw.getType() == GridType.EMPTY)
                     System.out.print(" □ ");
@@ -78,7 +79,7 @@ public class GameView {
     }
 
     //具体输入函数
-    public int[] inputBoundsandBoom() {
+    public int[] inputBoundAndBoom() {
     	int[] bb = new int[2];
     	//bb[0]为边界，bb[1]为雷数
         System.out.println("请输入棋盘大小和地雷数目");
@@ -139,15 +140,19 @@ public class GameView {
             }
 
             if ((coordinate[2] != 1 && coordinate[2] != 2)) {
-                System.out.println("操作参数请确定1和2");
-                coordinate = new int[]{0, 0, -1}; // 第三个值返回-1 代表操作参数出界
-                break;
+                System.out.println("操作参数只能为1和2");
+                System.out.println("请重新输入");
+                continue;
+//                coordinate = new int[]{0, 0, -1}; // 第三个值返回-1 代表操作参数出界
+//                break;
             }
 
             if (grids[coordinate[0]][coordinate[1]].isSelected()) {
                 System.out.println("选中的格子已经打开");
-                coordinate = new int[]{coordinate[0], coordinate[1], -2}; // 第三个值返回-2 代表操作失败
-                break;
+                System.out.println("请重新输入");
+                continue;
+//                coordinate = new int[]{coordinate[0], coordinate[1], -2}; // 第三个值返回-2 代表操作失败
+//                break;
             }
 
             if (!(coordinate[0] < bounds
@@ -155,8 +160,10 @@ public class GameView {
                     && coordinate[1] < bounds
                     && coordinate[1] >= 0)) {
                 System.out.println("输入坐标出界");
-                coordinate[2] = -3; // 第三个值返回-3 代表坐标出界
-                break;
+                System.out.println("请重新输入");
+                continue;
+//                coordinate[2] = -3; // 第三个值返回-3 代表坐标出界
+//                break;
             }
             break;
         }

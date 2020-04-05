@@ -5,14 +5,22 @@ public class Grid {
     private int y;//格子的坐标
     private int boomsAround ;//附近的额炸弹数
     private boolean isSelected ;//是否被翻开
+    private boolean isFlag;
     private GridType type;//是空白格，被棋子插了，还是有炸弹，还是显示数字
+
+
 
     public Grid(int x, int y) {
         this.x = x;
         this.y = y;
         this.isSelected = false;
+        this.isFlag = false;
         this.boomsAround = 0;
     }
+
+    public boolean isFlag() { return isFlag; }
+
+    public void setFlag(boolean flag) { isFlag = flag; }
 
     public int getX() {
         return x;
