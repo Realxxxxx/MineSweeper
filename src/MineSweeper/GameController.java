@@ -16,9 +16,8 @@ public class GameController {
         this.view.drawGame(grids);
         while (true){
             int[] pos = this.view.inputCo(args[0]);
-            int mode = this.view.inputFliporBoom();
             int isOver = 0;
-            if (mode == 1) {
+            if (pos[2] == 1) {
                 isOver = this.model.filpGrid(grids, pos[0], pos[1]);
             }else{
                 this.model.changeGridAttr(grids,pos[0],pos[1]);

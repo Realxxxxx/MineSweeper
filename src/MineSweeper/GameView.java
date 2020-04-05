@@ -73,7 +73,7 @@ public class GameView {
     }
     
 
-    public static int[] inputCo(int bounds,int mode) {
+    public static int[] inputCo(int bounds) {
     	int[] coordinate = new int[3];
     	System.out.println("请输入选择的坐标与操作（1为揭开，2为插旗，如12,12,2表示坐标12,12处插旗）：");
     	Scanner scan = new Scanner(System.in);
