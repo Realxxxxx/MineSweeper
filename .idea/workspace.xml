@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70d5d56a-bea3-4810-8471-643496b8dcdc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +41,26 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
+  <component name="RunManager">
+    <configuration name="GameManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MineSweeper.GameManager" />
+      <module name="MineSweeper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MineSweeper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GameManager" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -53,7 +75,9 @@
       <workItem from="1585569870446" duration="89000" />
       <workItem from="1585787809536" duration="1121000" />
       <workItem from="1585789190434" duration="6241000" />
-      <workItem from="1585928953421" duration="5839000" />
+      <workItem from="1585928953421" duration="6241000" />
+      <workItem from="1586005299268" duration="87000" />
+      <workItem from="1586049099691" duration="1016000" />
     </task>
     <servers />
   </component>
@@ -80,10 +104,27 @@
     <state x="267" y="23" key="CommitChangelistDialog2/0.23.1440.816@0.23.1440.816" timestamp="1585963470138" />
     <state x="267" y="23" key="CommitChangelistDialog2/0.23.1440.823@0.23.1440.823" timestamp="1585797665929" />
     <state x="475" y="23" key="CommitChangelistDialog2/0.23.2560.1359@0.23.2560.1359" timestamp="1585807717558" />
-    <state x="399" y="263" key="com.intellij.ide.util.TipDialog" timestamp="1585928954914">
-      <screen x="0" y="23" width="1440" height="816" />
+    <state width="1358" height="197" key="GridCell.Tab.0.bottom" timestamp="1586051364408">
+      <screen x="0" y="23" width="1440" height="821" />
     </state>
-    <state x="399" y="263" key="com.intellij.ide.util.TipDialog/0.23.1440.816@0.23.1440.816" timestamp="1585928954914" />
+    <state width="1358" height="197" key="GridCell.Tab.0.bottom/0.23.1440.821@0.23.1440.821" timestamp="1586051364408" />
+    <state width="1358" height="197" key="GridCell.Tab.0.center" timestamp="1586051364407">
+      <screen x="0" y="23" width="1440" height="821" />
+    </state>
+    <state width="1358" height="197" key="GridCell.Tab.0.center/0.23.1440.821@0.23.1440.821" timestamp="1586051364407" />
+    <state width="1358" height="197" key="GridCell.Tab.0.left" timestamp="1586051364407">
+      <screen x="0" y="23" width="1440" height="821" />
+    </state>
+    <state width="1358" height="197" key="GridCell.Tab.0.left/0.23.1440.821@0.23.1440.821" timestamp="1586051364407" />
+    <state width="1358" height="197" key="GridCell.Tab.0.right" timestamp="1586051364407">
+      <screen x="0" y="23" width="1440" height="821" />
+    </state>
+    <state width="1358" height="197" key="GridCell.Tab.0.right/0.23.1440.821@0.23.1440.821" timestamp="1586051364407" />
+    <state x="399" y="265" key="com.intellij.ide.util.TipDialog" timestamp="1586049100048">
+      <screen x="0" y="23" width="1440" height="822" />
+    </state>
+    <state x="399" y="263" key="com.intellij.ide.util.TipDialog/0.23.1440.816@0.23.1440.816" timestamp="1586005367860" />
+    <state x="399" y="265" key="com.intellij.ide.util.TipDialog/0.23.1440.822@0.23.1440.822" timestamp="1586049100048" />
     <state x="709" y="423" key="com.intellij.ide.util.TipDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1585787810167" />
     <state x="489" y="333" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585963455407">
       <screen x="0" y="23" width="1440" height="816" />

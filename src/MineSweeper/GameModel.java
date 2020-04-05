@@ -29,6 +29,8 @@ public class GameModel {
         //显然错的生成方式
         for (int i = 0; i <bounds ; i++) {
             for (int j = 0; j <bounds ; j++) {
+                grids[i][j] = new Grid(i,j);
+                count += 1;
                 if (count<numOfBooms){
                     grids[i][j].setType(GridType.BOOM);
                 }else{
@@ -45,8 +47,11 @@ public class GameModel {
         Vector<Grid> gridQueue = new Vector<>();
         gridQueue.add(grids[x][y]);
         grids[x][y].setSelected(true);
-        if (isWin(grids,x,y)==false){
+        int winState = isWin(grids,x,y);
+        if (winState==-1){
             return -1;
+        }else if (winState==1){
+            return 1;
         }
         //规则：上下左右的牌，1.已翻开的不加入队列 2.炸弹不加入队列 3.数字不加入队列 但是要翻开 4.棋子不加入队列
         while (!gridQueue.isEmpty()){
@@ -88,14 +93,25 @@ public class GameModel {
     }
 
     //判断胜利
-    public boolean isWin(Grid[][] grids, int x, int y){
+    public int isWin(Grid[][] grids, int x, int y){
         if (grids[x][y].getType() == GridType.BOOM && grids[x][y].isSelected()){
-            return false;
+            return -1;
+        }
+        int flag = 0;
+        for (int i = 0; i < grids.length; i++) {
+            for (int j = 0; j < grids.length; j++) {
+                if (grids[i][j].isSelected()==false && grids[i][j].getType()!=GridType.BOOM){
+                    flag = 1;
+                    break;
+                }
+            }
+        }
+        if (flag == 0){
+            return 1;
         }
 
 
-
-        return true;
+        return 0;
     }
 
     //响应view消息改变Grid的属性

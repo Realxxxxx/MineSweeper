@@ -74,6 +74,7 @@ public class GameView {
     
     public static int[] inputCo(int bounds) {
     	int[] coordinate = new int[2];
+        System.out.println("请输入点击坐标");
     	Scanner scan = new Scanner(System.in);
     	while(true) {
             if (scan.hasNextLine()) {
