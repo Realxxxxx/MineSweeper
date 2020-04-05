@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class GameView {
     //根据grid的属性来绘制对应的格子
-    public void drawGame(Grid[][] grids){
+    public void drawGame(Grid grids[][]){
         //
-        int x, y;
+        int x=0,y=0;
         //最大行列数设定为20
         //没有翻开为 □ ，empty为■，BOOM为×，Flag为♠ 
 
@@ -22,7 +22,7 @@ public class GameView {
 
         System.out.print("\n");
 
-        for(y = 0; y <= 19; y++){
+        for(  y = 0; y <= 19; y++ ){
 
             System.out.print(y+1);
             if(y<9)
@@ -32,7 +32,7 @@ public class GameView {
                 Grid griddraw = new Grid(x,y);
                 if(griddraw.getType() == GridType.FLAG)
                     System.out.print(" ♠ ");
-                else if(!griddraw.isSelected())
+                else if(griddraw.isSelected() == false)
                     System.out.print(" □ ");
                 else if(griddraw.getType() == GridType.EMPTY )
                     System.out.print(" ■ ");
@@ -50,18 +50,12 @@ public class GameView {
 
 
     }
-    //检测输入事件，传给controller
-    public void getClicked(){
 
-        GameController controller = new GameController();
-        controller.sendToModel();
-
-    }
     //具体输入函数
     public static int[] inputBoundsandBoom() {
     	int[] bb = new int[2];
     	//bb[0]为边界，bb[1]为雷数
-    	System.out.println("请输入边界与雷数：");
+        System.out.println("请输入棋盘大小和地雷数目");
     	Scanner scan = new Scanner(System.in);
     	while(true) {
             if (scan.hasNextLine()) {
@@ -74,11 +68,11 @@ public class GameView {
             	break;
             System.out.println("输入雷数过多，请重新输入");
     	}
-
         scan.close();
         return bb;
     }
     
+
     public static int[] inputCo(int bounds,int mode) {
     	int[] coordinate = new int[3];
     	System.out.println("请输入选择的坐标与操作（1为揭开，2为插旗，如12,12,2表示坐标12,12处插旗）：");
@@ -101,7 +95,6 @@ public class GameView {
         scan.close();
         return coordinate;
     }
-    
 
 
 }

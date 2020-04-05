@@ -43,8 +43,12 @@ public class Grid {
     public void setSelected(boolean selected) {
         isSelected = selected;
     }
-    
+
     public GridType getType() {
         return type;
+    }
+
+    public void setType(GridType type) {
+        this.type = type;
     }
 }
