@@ -1,14 +1,17 @@
 package MineSweeper;
 
+import java.io.InputStream;
+
 public class GameController {
     //判断view传来的消息应该调用model的哪些方法
-    private GameModel model;
-    private GameView view;
+    public GameModel model;
+    public GameView view;
 
     public GameController() {
         this.model = new GameModel();
         this.view = new GameView();
     }
+
 
     public void start(){
         int[] args = this.view.inputBoundsandBoom();
