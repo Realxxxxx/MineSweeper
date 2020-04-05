@@ -15,7 +15,7 @@ public class GameController {
         Grid[][] grids = this.model.initGame(args[0],args[1]);
         this.view.drawGame(grids);
         while (true){
-            int[] pos = this.view.inputCo(args[0]);
+            int[] pos = this.view.inputCo(args[0],grids);
             int isOver = 0;
             if (pos[2] == 1) {
                 isOver = this.model.filpGrid(grids, pos[0], pos[1]);

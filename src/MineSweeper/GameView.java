@@ -52,7 +52,7 @@ public class GameView {
     }
 
     //具体输入函数
-    public static int[] inputBoundsandBoom() {
+    public int[] inputBoundsandBoom() {
     	int[] bb = new int[2];
     	//bb[0]为边界，bb[1]为雷数
         System.out.println("请输入棋盘大小和地雷数目");
@@ -73,7 +73,7 @@ public class GameView {
     }
     
 
-    public static int[] inputCo(int bounds) {
+    public int[] inputCo(int bounds, Grid[][] grids) {
     	int[] coordinate = new int[3];
     	System.out.println("请输入选择的坐标与操作（1为揭开，2为插旗，如12,12,2表示坐标12,12处插旗）：");
     	Scanner scan = new Scanner(System.in);
@@ -85,8 +85,8 @@ public class GameView {
                 coordinate[1] = Integer.parseInt(buff[1]);
                 coordinate[2] = Integer.parseInt(buff[2]);
             }
-            //TODO if grid is selected
-            if((coordinate[2] == 1||coordinate[2] == 2)
+            
+            if((coordinate[2] == 1||coordinate[2] == 2)&&!grids[coordinate[0]][coordinate[1]].isSelected()
             		&&coordinate[0]<bounds && coordinate[0]>=0 && coordinate[1]<bounds && coordinate[1]>= 0 )
             	break;
             System.out.println("输入不合法，请重新输入");
