@@ -58,10 +58,10 @@ public class GameView {
 
     }
     //具体输入函数
-    public static int[] inputBoundsandBoom(String message) {
+    public static int[] inputBoundsandBoom() {
     	int[] bb = new int[2];
     	//bb[0]为边界，bb[1]为雷数
-    	System.out.println(message);
+    	System.out.println("请输入边界与雷数：");
     	Scanner scan = new Scanner(System.in);
     	while(true) {
             if (scan.hasNextLine()) {
@@ -72,16 +72,16 @@ public class GameView {
             }
             if(bb[1]<bb[0]*bb[0])
             	break;
-            System.out.println("输入不合法，请重新输入");
+            System.out.println("输入雷数过多，请重新输入");
     	}
 
         scan.close();
         return bb;
     }
     
-    public static int[] inputCo(String message, int bounds) {
-    	int[] coordinate = new int[2];
-    	System.out.println(message);
+    public static int[] inputCo(int bounds,int mode) {
+    	int[] coordinate = new int[3];
+    	System.out.println("请输入选择的坐标与操作（1为揭开，2为插旗，如12,12,2表示坐标12,12处插旗）：");
     	Scanner scan = new Scanner(System.in);
     	while(true) {
             if (scan.hasNextLine()) {
@@ -89,8 +89,11 @@ public class GameView {
                 String[] buff =  str.split(",|\\s");
                 coordinate[0] = Integer.parseInt(buff[0]);
                 coordinate[1] = Integer.parseInt(buff[1]);
+                coordinate[2] = Integer.parseInt(buff[2]);
             }
-            if(coordinate[0]<bounds && coordinate[0]>=0 && coordinate[1]<bounds && coordinate[1]>= 0)
+            //TODO if grid is selected
+            if((coordinate[2] == 1||coordinate[2] == 2)
+            		&&coordinate[0]<bounds && coordinate[0]>=0 && coordinate[1]<bounds && coordinate[1]>= 0 )
             	break;
             System.out.println("输入不合法，请重新输入");
     	}
@@ -99,24 +102,6 @@ public class GameView {
         return coordinate;
     }
     
-    public static int inputFliporBoom(String message) {
-    	//mode=1为揭开格子，mode=2为插旗
-    	int mode = 0;
-    	System.out.println(message);
-    	Scanner scan = new Scanner(System.in);
-    	while(true) {
-            if (scan.hasNextLine()) {
-                String str = scan.nextLine();
-                mode = Integer.parseInt(str);
-            }
-            if(mode==1||mode==2)
-            	break;
-            System.out.println("输入不合法，请重新输入");
-    	}
-
-        scan.close();
-        return mode;
-    }
 
 
 }
