@@ -2,6 +2,7 @@ package MineSweeper;
 
 import java.util.Vector;
 import java.util.Random;
+
 public class GameModel {
     public int bounds;
     public Grid[][] grids;
@@ -37,15 +38,15 @@ public class GameModel {
         Random rand = new Random();
 
         for (int i = 0; i < numOfBooms; i++) {
-            int posX = rand.nextInt(100)%bounds;
-            int posY = rand.nextInt(100)%bounds;
+            int posX = rand.nextInt(bounds);
+            int posY = rand.nextInt(bounds);
                 while (true) {
                 if (grids[posX][posY].getType() != GridType.BOOM) {
                     grids[posX][posY].setType(GridType.BOOM);
                     break;
                 }
-                posX = rand.nextInt()%bounds;
-                posY = rand.nextInt()%bounds;
+                posX = rand.nextInt(bounds);
+                posY = rand.nextInt(bounds);
             }
         }
         for (int i = 0; i <bounds ; i++) {

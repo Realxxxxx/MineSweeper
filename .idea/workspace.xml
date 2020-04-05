@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70d5d56a-bea3-4810-8471-643496b8dcdc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/MineSweeper/ScreenPrintTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/MineSweeper/ScreenPrintTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +77,7 @@
       <workItem from="1585928953421" duration="6241000" />
       <workItem from="1586005299268" duration="87000" />
       <workItem from="1586049099691" duration="1016000" />
-      <workItem from="1586079745393" duration="872000" />
+      <workItem from="1586079745393" duration="1830000" />
     </task>
     <servers />
   </component>
@@ -111,22 +108,26 @@
     <state x="267" y="23" key="CommitChangelistDialog2/0.23.1440.816@0.23.1440.816" timestamp="1585963470138" />
     <state x="267" y="23" key="CommitChangelistDialog2/0.23.1440.823@0.23.1440.823" timestamp="1585797665929" />
     <state x="475" y="23" key="CommitChangelistDialog2/0.23.2560.1359@0.23.2560.1359" timestamp="1585807717558" />
-    <state width="1358" height="197" key="GridCell.Tab.0.bottom" timestamp="1586051364408">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state width="1358" height="197" key="GridCell.Tab.0.bottom" timestamp="1586084165614">
+      <screen x="0" y="23" width="2560" height="1359" />
     </state>
     <state width="1358" height="197" key="GridCell.Tab.0.bottom/0.23.1440.821@0.23.1440.821" timestamp="1586051364408" />
-    <state width="1358" height="197" key="GridCell.Tab.0.center" timestamp="1586051364407">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state width="1358" height="197" key="GridCell.Tab.0.bottom/0.23.2560.1359@0.23.2560.1359" timestamp="1586084165614" />
+    <state width="1358" height="197" key="GridCell.Tab.0.center" timestamp="1586084165613">
+      <screen x="0" y="23" width="2560" height="1359" />
     </state>
     <state width="1358" height="197" key="GridCell.Tab.0.center/0.23.1440.821@0.23.1440.821" timestamp="1586051364407" />
-    <state width="1358" height="197" key="GridCell.Tab.0.left" timestamp="1586051364407">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state width="1358" height="197" key="GridCell.Tab.0.center/0.23.2560.1359@0.23.2560.1359" timestamp="1586084165613" />
+    <state width="1358" height="197" key="GridCell.Tab.0.left" timestamp="1586084165613">
+      <screen x="0" y="23" width="2560" height="1359" />
     </state>
     <state width="1358" height="197" key="GridCell.Tab.0.left/0.23.1440.821@0.23.1440.821" timestamp="1586051364407" />
-    <state width="1358" height="197" key="GridCell.Tab.0.right" timestamp="1586051364407">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state width="1358" height="197" key="GridCell.Tab.0.left/0.23.2560.1359@0.23.2560.1359" timestamp="1586084165613" />
+    <state width="1358" height="197" key="GridCell.Tab.0.right" timestamp="1586084165613">
+      <screen x="0" y="23" width="2560" height="1359" />
     </state>
     <state width="1358" height="197" key="GridCell.Tab.0.right/0.23.1440.821@0.23.1440.821" timestamp="1586051364407" />
+    <state width="1358" height="197" key="GridCell.Tab.0.right/0.23.2560.1359@0.23.2560.1359" timestamp="1586084165613" />
     <state x="775" y="517" key="MultipleFileMergeDialog" timestamp="1586080746074">
       <screen x="0" y="23" width="2560" height="1359" />
     </state>
