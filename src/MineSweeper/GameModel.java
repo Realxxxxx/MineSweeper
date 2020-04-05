@@ -3,8 +3,9 @@ package MineSweeper;
 import java.util.Vector;
 
 public class GameModel {
-    private int bounds;
-    private Grid[][] grids;
+    public int bounds;
+    public int numOfBooms;
+    public Grid[][] grids;
 
     public Grid[][] getGrids() {
         return grids;
@@ -22,11 +23,19 @@ public class GameModel {
         this.bounds = bounds;
     }
 
+    public void generateMap(Grid[][] grids, int numOfBooms, int safeX, int safeY){
+        // safeRow, safeY为第一次点击的格子位置，必然不是地雷
+    }
+
     //初始化盘大小，地雷数目，grids
-    public Grid[][] initGame(int bounds,int numOfBooms){
-        Grid[][] grids = new Grid[bounds][bounds];
+    public void initGame(int bounds, int numOfBooms){
+        this.bounds = bounds;
+        this.numOfBooms = numOfBooms;
+        this.grids = new Grid[bounds][bounds];
+        /*
         int count = 0;
         //显然错的生成方式
+
         for (int i = 0; i <bounds ; i++) {
             for (int j = 0; j <bounds ; j++) {
                 grids[i][j] = new Grid(i,j);
@@ -38,11 +47,19 @@ public class GameModel {
                 }
             }
         }
-
-        return  grids;
+         */
     }
 
-    //翻开gird之后的操作
+    public int firstFlipGrid(Grid[][] grids, int x, int y){
+        // 第一次点击grid后实时生成Map
+        this.generateMap(grids, this.numOfBooms, x, y);
+        /*
+        调用 filpGrid
+         */
+        return 1;
+    }
+
+    //翻开grid之后的操作
     public int filpGrid(Grid[][] grids, int x, int y){
         Vector<Grid> gridQueue = new Vector<>();
         gridQueue.add(grids[x][y]);

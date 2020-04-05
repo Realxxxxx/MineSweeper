@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70d5d56a-bea3-4810-8471-643496b8dcdc" name="Default Changelist" comment="&lt;ADD&gt; Do the InputTest">
-      <change afterPath="$PROJECT_DIR$/Test/MineSweeper/InputTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="70d5d56a-bea3-4810-8471-643496b8dcdc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MineSweeper/META-INF/MineSweeper.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MineSweeper/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/Grid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +51,20 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="JUnit.InputTest.testGameInValidFormat2">
+  <component name="RunManager" selected="Application.GameManager">
+    <configuration name="GameManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MineSweeper.GameManager" />
+      <module name="MineSweeper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MineSweeper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="InputTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MineSweeper" />
       <extension name="coverage">
@@ -84,7 +96,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InputTest.testGameInValidFormat2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InputTest.testGameInValidInput2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MineSweeper" />
       <extension name="coverage">
         <pattern>
@@ -94,13 +106,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="MineSweeper" />
       <option name="MAIN_CLASS_NAME" value="MineSweeper.InputTest" />
-      <option name="METHOD_NAME" value="testGameInValidFormat2" />
+      <option name="METHOD_NAME" value="testGameInValidInput2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InputTest.testGameValidFormat1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InputTest.testGameInValidInput3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MineSweeper" />
       <extension name="coverage">
         <pattern>
@@ -110,23 +122,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="MineSweeper" />
       <option name="MAIN_CLASS_NAME" value="MineSweeper.InputTest" />
-      <option name="METHOD_NAME" value="testGameValidFormat1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InputTest.testGameValidFormat2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MineSweeper" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="MineSweeper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="MineSweeper" />
-      <option name="MAIN_CLASS_NAME" value="MineSweeper.InputTest" />
-      <option name="METHOD_NAME" value="testGameValidFormat2" />
+      <option name="METHOD_NAME" value="testGameInValidInput3" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -134,11 +130,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.InputTest.testGameInValidFormat2" />
-        <item itemvalue="JUnit.InputTest.testGameInValidFormat1" />
-        <item itemvalue="JUnit.InputTest.testGameValidFormat2" />
+        <item itemvalue="Application.GameManager" />
         <item itemvalue="JUnit.InputTest" />
-        <item itemvalue="JUnit.InputTest.testGameValidFormat1" />
+        <item itemvalue="JUnit.InputTest.testGameInValidFormat1" />
+        <item itemvalue="JUnit.InputTest.testGameInValidInput3" />
+        <item itemvalue="JUnit.InputTest.testGameInValidInput2" />
       </list>
     </recent_temporary>
   </component>
@@ -159,11 +155,33 @@
       <workItem from="1585928953421" duration="6241000" />
       <workItem from="1586005299268" duration="87000" />
       <workItem from="1586049099691" duration="1016000" />
+      <workItem from="1586076062092" duration="2790000" />
     </task>
+    <task id="LOCAL-00001" summary="&lt;ADD&gt; Do the InputTest">
+      <created>1586070064745</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586070064745</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&lt;ADD&gt; Do the InputTest" />
@@ -185,42 +203,47 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="492" y="237" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.689@0.0.1280.689" timestamp="1586064664234" />
-    <state x="237" y="0" key="CommitChangelistDialog2" timestamp="1586070010517">
+    <state x="237" y="0" key="CommitChangelistDialog2" timestamp="1586070063572">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="237" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586070010517" />
+    <state x="237" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586070063572" />
     <state x="267" y="23" key="CommitChangelistDialog2/0.23.1440.816@0.23.1440.816" timestamp="1585963470138" />
     <state x="267" y="23" key="CommitChangelistDialog2/0.23.1440.823@0.23.1440.823" timestamp="1585797665929" />
     <state x="475" y="23" key="CommitChangelistDialog2/0.23.2560.1359@0.23.2560.1359" timestamp="1585807717558" />
-    <state width="1237" height="166" key="GridCell.Tab.0.bottom" timestamp="1586070010543">
+    <state width="1237" height="192" key="GridCell.Tab.0.bottom" timestamp="1586078630252">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="166" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1586070010543" />
+    <state width="1237" height="192" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1586078630252" />
     <state width="1358" height="197" key="GridCell.Tab.0.bottom/0.23.1440.821@0.23.1440.821" timestamp="1586051364408" />
-    <state width="1237" height="166" key="GridCell.Tab.0.center" timestamp="1586070010543">
+    <state width="1237" height="192" key="GridCell.Tab.0.center" timestamp="1586078630252">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="166" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1586070010543" />
+    <state width="1237" height="192" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1586078630252" />
     <state width="1358" height="197" key="GridCell.Tab.0.center/0.23.1440.821@0.23.1440.821" timestamp="1586051364407" />
-    <state width="1237" height="166" key="GridCell.Tab.0.left" timestamp="1586070010543">
+    <state width="1237" height="192" key="GridCell.Tab.0.left" timestamp="1586078630252">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="166" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1586070010543" />
+    <state width="1237" height="192" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1586078630252" />
     <state width="1358" height="197" key="GridCell.Tab.0.left/0.23.1440.821@0.23.1440.821" timestamp="1586051364407" />
-    <state width="1237" height="166" key="GridCell.Tab.0.right" timestamp="1586070010543">
+    <state width="1237" height="192" key="GridCell.Tab.0.right" timestamp="1586078630252">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="166" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1586070010543" />
+    <state width="1237" height="192" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1586078630252" />
     <state width="1358" height="197" key="GridCell.Tab.0.right/0.23.1440.821@0.23.1440.821" timestamp="1586051364407" />
+    <state x="233" y="81" key="Vcs.Push.Dialog.v2" timestamp="1586070085599">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="233" y="81" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1586070085599" />
     <state x="399" y="265" key="com.intellij.ide.util.TipDialog" timestamp="1586049100048">
       <screen x="0" y="23" width="1440" height="822" />
     </state>
     <state x="399" y="263" key="com.intellij.ide.util.TipDialog/0.23.1440.816@0.23.1440.816" timestamp="1586005367860" />
     <state x="399" y="265" key="com.intellij.ide.util.TipDialog/0.23.1440.822@0.23.1440.822" timestamp="1586049100048" />
     <state x="709" y="423" key="com.intellij.ide.util.TipDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1585787810167" />
-    <state x="489" y="333" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585963455407">
-      <screen x="0" y="23" width="1440" height="816" />
+    <state x="435" y="262" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586076264302">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
+    <state x="435" y="262" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.689@0.0.1280.689" timestamp="1586076264302" />
     <state x="489" y="333" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.816@0.23.1440.816" timestamp="1585963455407" />
     <state x="489" y="335" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.823@0.23.1440.823" timestamp="1585797639869" />
     <state x="489" y="336" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.825@0.23.1440.825" timestamp="1585901562977" />
@@ -229,10 +252,10 @@
     </state>
     <state x="649" y="151" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1280.689@0.0.1280.689" timestamp="1586064734673" />
     <state x="1297" y="347" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1585807307924" />
-    <state x="324" y="123" width="672" height="566" key="search.everywhere.popup" timestamp="1586069609117">
+    <state x="324" y="123" width="672" height="566" key="search.everywhere.popup" timestamp="1586078378213">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="324" y="123" width="672" height="566" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1586069609117" />
+    <state x="324" y="123" width="672" height="566" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1586078378213" />
     <state x="365" y="170" width="670" height="676" key="search.everywhere.popup/0.23.1440.823@0.23.1440.823" timestamp="1585793451787" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">

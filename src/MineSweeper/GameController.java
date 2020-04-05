@@ -15,20 +15,26 @@ public class GameController {
 
     public void start(){
         int[] args = this.view.inputBoundsandBoom();
-        Grid[][] grids = this.model.initGame(args[0],args[1]);
-        this.view.drawGame(grids);
-        while (true){
-            int[] pos = this.view.inputCo(args[0],grids);
-            int isOver = 0;
-            if (pos[2] == 1) {
-                isOver = this.model.filpGrid(grids, pos[0], pos[1]);
-            }else{
-                this.model.changeGridAttr(grids,pos[0],pos[1]);
-            }
-            if (isOver == -1){
-                break;
-            }
-        }
+        this.model.initGame(args[0], args[1]);
+
+        this.view.drawGame(this.model.grids);
+
+        // TO DO
+        // 1. first Filp
+        // 2. while(1) { Filp }
+
+//        while (true){
+//            int[] pos = this.view.inputCo(args[0], this.model.grids);
+//            int isOver = 0;
+//            if (pos[2] == 1) {
+//                isOver = this.model.filpGrid(this.model.grids, pos[0], pos[1]);
+//            }else{
+//                this.model.changeGridAttr(this.model.grids, pos[0], pos[1]);
+//            }
+//            if (isOver == -1){
+//                break;
+//            }
+//        }
     }
 
 }

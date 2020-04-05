@@ -4,10 +4,6 @@ import java.io.InputStream;
 import java.util.Scanner;
 
 public class GameView {
-
-
-
-
     //根据grid的属性来绘制对应的格子
 
 
@@ -20,49 +16,61 @@ public class GameView {
 
     public void drawGame(Grid[][] grids){
         //
-        int x, y;
+        int horizontalLength = grids[0].length;   // 列数
+        int verticalLength = grids.length;        // 行数
         //最大行列数设定为20
-        //没有翻开为 □ ，empty为■，BOOM为×，Flag为♠ 
-
+        //没有翻开为 □ ，empty为■，BOOM为×，Flag为♠
         System.out.print(" ");
-        for( int i =0; i<=8;i++){
-            System.out.print("| ");
-            System.out.print(i+1);
+        // 输出头一行  个位数和十位数的打印不同
+        if (horizontalLength <= 8){
+            for(int i=0; i < horizontalLength; i++){
+                System.out.print("| ");
+                System.out.print(i+1);
+            }
+        }else{
+            for(int i=0; i<=8; i++){
+                System.out.print("| ");
+                System.out.print(i+1);
+            }
+            for(int i=9; i<horizontalLength; i++){
+                System.out.print("|");
+                System.out.print(i+1);
+            }
         }
-        for( int i =9; i<=19;i++){
-            System.out.print("|");
-            System.out.print(i+1);
-        }
-
         System.out.print("\n");
 
-        for(  y = 0; y <= 19; y++ ){
-
-            System.out.print(y+1);
-            if(y<9)
+        // 输出实际内容
+        for(int y = 0; y < verticalLength; y++ ) {
+            System.out.print(y + 1);
+            if (y < 9)
                 System.out.print(" ");
 
-            for( x = 0 ; x <= 19; x++){
-                Grid griddraw = new Grid(x,y);
-                if(griddraw.getType() == GridType.FLAG)
+            for (int x = 0; x < horizontalLength; x++) {
+                Grid griddraw = new Grid(x, y);
+                if (griddraw.getType() == GridType.FLAG)
                     System.out.print(" ♠ ");
-                else if(griddraw.isSelected() == false)
+                else if (griddraw.isSelected() == false)
                     System.out.print(" □ ");
-                else if(griddraw.getType() == GridType.EMPTY )
+                else if (griddraw.getType() == GridType.EMPTY)
                     System.out.print(" ■ ");
-                else if(griddraw.getType() == GridType.BOOM)
+                else if (griddraw.getType() == GridType.BOOM)
                     System.out.print(" × ");
-                else if(griddraw.getType() == GridType.DANGEROUS){
+                else if (griddraw.getType() == GridType.DANGEROUS) {
                     System.out.print(" ");
                     System.out.print(griddraw.getBoomsAround());
                     System.out.print(" ");
                 }
-
             }
             System.out.print("\n");
         }
+    }
 
-
+    public boolean isGridRight(Grid[][] grids, int row, int column, GridType gt)
+    {
+        boolean isRight = false;
+        if (grids[row][column].getType() == gt)
+            isRight = true;
+        return isRight;
     }
 
     //具体输入函数
