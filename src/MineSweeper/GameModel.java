@@ -3,8 +3,8 @@ package MineSweeper;
 import java.util.Vector;
 import java.util.Random;
 public class GameModel {
-    private int bounds;
-    private Grid[][] grids;
+    public int bounds;
+    public Grid[][] grids;
 
     public Grid[][] getGrids() {
         return grids;
@@ -24,11 +24,10 @@ public class GameModel {
 
 
     //初始化盘大小，地雷数目，grids
-    public Grid[][] initGame(int bounds,int numOfBooms){
+    public Grid[][] initGame(int bounds, int numOfBooms){
         Grid[][] grids = new Grid[bounds][bounds];
-        int count = 0;
 
-        //显然错的生成方式
+        // 生成地图
         for (int i = 0; i <bounds ; i++) {
             for (int j = 0; j <bounds ; j++) {
                 grids[i][j] = new Grid(i,j);
@@ -38,9 +37,9 @@ public class GameModel {
         Random rand = new Random();
 
         for (int i = 0; i < numOfBooms; i++) {
-            int posX = rand.nextInt()%bounds;
-            int posY = rand.nextInt()%bounds;
-            while (true) {
+            int posX = rand.nextInt(100)%bounds;
+            int posY = rand.nextInt(100)%bounds;
+                while (true) {
                 if (grids[posX][posY].getType() != GridType.BOOM) {
                     grids[posX][posY].setType(GridType.BOOM);
                     break;
@@ -98,8 +97,7 @@ public class GameModel {
                 }
             }
         }
-
-
+        this.grids = grids;
         return  grids;
     }
 

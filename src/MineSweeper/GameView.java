@@ -1,5 +1,6 @@
 package MineSweeper;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
 
@@ -9,6 +10,7 @@ public class GameView {
 
     // 用于控制输入
     private InputStream inStream = System.in;
+
     // setter ; use for test
     public void setInStream(InputStream inStream) {
         this.inStream = inStream;
@@ -114,31 +116,48 @@ public class GameView {
     	    bb = new int[]{-2, -2};
     	    System.out.println(e);
         }
-        scan.close();
+//        scan.close();
         return bb;
     }
     
 
     public int[] inputCo(int bounds, Grid[][] grids) {
     	int[] coordinate = new int[3];
-    	System.out.println("请输入选择的坐标与操作（1为揭开，2为插旗，如12,12,2表示坐标12,12处插旗）：");
+    	System.out.println("请输入选择的坐标与操作(1为揭开，2为插旗，如4,8,2表示坐标[4,8]处插旗)");
     	Scanner scan = new Scanner(System.in);
     	while(true) {
             if (scan.hasNextLine()) {
                 String str = scan.nextLine();
-                String[] buff =  str.split(",|\\s");
-                coordinate[0] = Integer.parseInt(buff[0]);
-                coordinate[1] = Integer.parseInt(buff[1]);
-                coordinate[2] = Integer.parseInt(buff[2]);
+                str = str.trim(); // 去除前后空格
+                str = str.replaceAll("，", ",");  // 顺便处理中文逗号
+                String[] buff = str.split("\\s+,|,\\s+|,|\\s+");
+                coordinate[0] = Integer.parseInt(buff[0]); // x
+                coordinate[1] = Integer.parseInt(buff[1]); // y
+                coordinate[2] = Integer.parseInt(buff[2]); // perform
             }
-            
-            if((coordinate[2] == 1||coordinate[2] == 2)&&!grids[coordinate[0]][coordinate[1]].isSelected()
-            		&&coordinate[0]<bounds && coordinate[0]>=0 && coordinate[1]<bounds && coordinate[1]>= 0 )
-            	break;
-            System.out.println("输入不合法，请重新输入");
-    	}
 
-        scan.close();
+            if ((coordinate[2] == 1 || coordinate[2] == 2)) {
+                System.out.println("操作参数请确定1和2");
+                coordinate = new int[]{0, 0, -1}; // 第三个值返回-1 代表操作参数出界
+                break;
+            }
+
+            if (!grids[coordinate[0]][coordinate[1]].isSelected()) {
+                System.out.println("选中的格子已经打开");
+                coordinate = new int[]{coordinate[0], coordinate[1], -2}; // 第三个值返回-2 代表操作失败
+                break;
+            }
+
+            if (coordinate[0] < bounds
+                    && coordinate[0] >= 0
+                    && coordinate[1] < bounds
+                    && coordinate[1] >= 0) {
+                System.out.println("输入坐标出界");
+                coordinate[2] = -3; // 第三个值返回-3 代表坐标出界
+                break;
+            }
+            break;
+        }
         return coordinate;
     }
 
