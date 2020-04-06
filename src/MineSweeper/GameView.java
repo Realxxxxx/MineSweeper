@@ -54,8 +54,9 @@ public class GameView {
                 if (griddraw.isFlag())
 //                    System.out.print(" ♠ ");
                     System.out.print(" F ");
-                else if (!griddraw.isSelected())
-                    System.out.print(" ■ ");
+                // debug
+//                else if (!griddraw.isSelected())
+//                    System.out.print(" ■ ");
                 else if (griddraw.getType() == GridType.EMPTY)
                     System.out.print(" □ ");
                 else if (griddraw.getType() == GridType.BOOM)
@@ -147,18 +148,18 @@ public class GameView {
 //                break;
             }
 
-            if (grids[coordinate[0]][coordinate[1]].isSelected()) {
-                System.out.println("选中的格子已经打开");
-                System.out.println("请重新输入");
-                continue;
-//                coordinate = new int[]{coordinate[0], coordinate[1], -2}; // 第三个值返回-2 代表操作失败
-//                break;
-            }
-
-            if (!(coordinate[0] < bounds
-                    && coordinate[0] >= 0
-                    && coordinate[1] < bounds
-                    && coordinate[1] >= 0)) {
+//            if (grids[coordinate[0]-1][coordinate[1]].isSelected()) {
+//                System.out.println("选中的格子已经打开");
+//                System.out.println("请重新输入");
+//                continue;
+////                coordinate = new int[]{coordinate[0], coordinate[1], -2}; // 第三个值返回-2 代表操作失败
+////                break;
+//            }
+            // 此处的coor[0] coor[1]   ->  x+1 y+1
+            if (!(coordinate[0] <= bounds
+                    && coordinate[0] > 0
+                    && coordinate[1] <= bounds
+                    && coordinate[1] > 0)) {
                 System.out.println("输入坐标出界");
                 System.out.println("请重新输入");
                 continue;

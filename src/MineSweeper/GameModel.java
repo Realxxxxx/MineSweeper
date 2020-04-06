@@ -1,5 +1,6 @@
 package MineSweeper;
 
+import java.util.ArrayList;
 import java.util.Vector;
 import java.util.Random;
 
@@ -23,12 +24,9 @@ public class GameModel {
         this.bounds = bounds;
     }
 
-
-    //初始化盘大小，地雷数目，grids
-    public Grid[][] initGame(int bounds, int numOfBooms){
+    // 独立出来以供测试
+    public Grid[][] generateMap(int bounds, int numOfBooms){
         Grid[][] grids = new Grid[bounds][bounds];
-        this.bounds = bounds;
-        // 生成地图
         for (int i = 0; i <bounds ; i++) {
             for (int j = 0; j <bounds ; j++) {
                 grids[i][j] = new Grid(i,j);
@@ -40,7 +38,7 @@ public class GameModel {
         for (int i = 0; i < numOfBooms; i++) {
             int posX = rand.nextInt(bounds);
             int posY = rand.nextInt(bounds);
-                while (true) {
+            while (true) {
                 if (grids[posX][posY].getType() != GridType.BOOM) {
                     grids[posX][posY].setType(GridType.BOOM);
                     break;
@@ -49,6 +47,7 @@ public class GameModel {
                 posY = rand.nextInt(bounds);
             }
         }
+        // 为所有位置赋值BoomsAround
         for (int i = 0; i <bounds ; i++) {
             for (int j = 0; j <bounds ; j++) {
                 if (grids[i][j].getType()==GridType.EMPTY) {
@@ -98,7 +97,16 @@ public class GameModel {
                 }
             }
         }
-        this.grids = grids;
+        return grids;
+
+    }
+
+    //初始化盘大小，地雷数目，grids
+    public Grid[][] initGame(int bounds, int numOfBooms){
+
+        this.bounds = bounds;
+        // 生成地图
+        this.grids = generateMap(bounds, numOfBooms);
         return grids;
     }
 
@@ -120,6 +128,7 @@ public class GameModel {
         // 2. 检测翻开的格子是不是炸弹
         if (isBooming(grids, x, y))
         {
+            // 是炸弹就直接修改游戏状态
             state = GameState.Fail;
             grids[x][y].setSelected(true);
             return;
@@ -130,39 +139,60 @@ public class GameModel {
             Grid grid = gridQueue.remove(0);
             x = grid.getX();
             y = grid.getY();
-            System.out.println(gridQueue.size());
-            if (x!=0) {
-                if (grids[x-1][y].getType() == GridType.EMPTY) {
-                    gridQueue.add(grids[x - 1][y]);
-                    grids[x - 1][y].setSelected(true);
-                }else if (grids[x-1][y].getType() == GridType.DANGEROUS) {
-                    grids[x - 1][y].setSelected(true);
+            // 挑选出备选进入加入队列的格子
+            ArrayList<Grid> trackGridsList = new ArrayList<>();
+            if (x!=0)
+                trackGridsList.add(grids[x-1][y]);
+            if (y!=0)
+                trackGridsList.add(grids[x][y-1]);
+            if (x!=bounds-1)
+                trackGridsList.add(grids[x+1][y]);
+            if (y!=bounds-1)
+                trackGridsList.add(grids[x][y+1]);
+            for (Grid trackGrid: trackGridsList) {
+                if (trackGrid.getType() != GridType.BOOM && !trackGrid.isSelected()) {
+                    gridQueue.add(trackGrid);
+                    trackGrid.setSelected(true);
                 }
             }
-            if (y!=0){
-                if (grids[x][y-1].getType() == GridType.EMPTY) {
-                    gridQueue.add(grids[x][y-1]);
-                    grids[x][y-1].setSelected(true);
-                }else if (grids[x][y-1].getType() == GridType.DANGEROUS) {
-                    grids[x][y-1].setSelected(true);
-                }
-            }
-            if (x!=bounds-1){
-                if (grids[x+1][y].getType() == GridType.EMPTY) {
-                    gridQueue.add(grids[x + 1][y]);
-                    grids[x + 1][y].setSelected(true);
-                }else if (grids[x+1][y].getType() == GridType.DANGEROUS) {
-                    grids[x + 1][y].setSelected(true);
-                }
-            }
-            if (y!=bounds-1){
-                if (grids[x][y+1].getType() == GridType.EMPTY) {
-                    gridQueue.add(grids[x][y+1]);
-                    grids[x][y+1].setSelected(true);
-                }else if (grids[x][y+1].getType() == GridType.DANGEROUS) {
-                    grids[x][y+1].setSelected(true);
-                }
-            }
+            // 处理左边一格
+//            System.out.println(gridQueue.size());
+//            if (x!=0) {
+//                if (grids[x-1][y].getType() == GridType.EMPTY) {
+//                    gridQueue.add(grids[x - 1][y]);
+//                    grids[x - 1][y].setSelected(true);
+//                }else if (grids[x-1][y].getType() == GridType.DANGEROUS) {
+//                    grids[x - 1][y].setSelected(true);
+//                }
+//            }
+
+//            // 处理上边一格
+//            if (y!=0){
+//                if (grids[x][y-1].getType() == GridType.EMPTY) {
+//                    gridQueue.add(grids[x][y-1]);
+//                    grids[x][y-1].setSelected(true);
+//                }else if (grids[x][y-1].getType() == GridType.DANGEROUS) {
+//                    grids[x][y-1].setSelected(true);
+//                }
+//            }
+//            // 处理右边一个
+//            if (x!=bounds-1){
+//                if (grids[x+1][y].getType() == GridType.EMPTY) {
+//                    gridQueue.add(grids[x + 1][y]);
+//                    grids[x + 1][y].setSelected(true);
+//                }else if (grids[x+1][y].getType() == GridType.DANGEROUS) {
+//                    grids[x + 1][y].setSelected(true);
+//                }
+//            }
+//            // 处理上边一个
+//            if (y!=bounds-1){
+//                if (grids[x][y+1].getType() == GridType.EMPTY) {
+//                    gridQueue.add(grids[x][y+1]);
+//                    grids[x][y+1].setSelected(true);
+//                }else if (grids[x][y+1].getType() == GridType.DANGEROUS) {
+//                    grids[x][y+1].setSelected(true);
+//                }
+//            }
         }
     }
 
