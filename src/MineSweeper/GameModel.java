@@ -27,6 +27,7 @@ public class GameModel {
     //初始化盘大小，地雷数目，grids
     public Grid[][] initGame(int bounds, int numOfBooms){
         Grid[][] grids = new Grid[bounds][bounds];
+        this.bounds = bounds;
         // 生成地图
         for (int i = 0; i <bounds ; i++) {
             for (int j = 0; j <bounds ; j++) {
@@ -126,7 +127,10 @@ public class GameModel {
         //3. 处理未触雷
         //规则：上下左右的牌，1.已翻开的不加入队列 2.炸弹不加入队列 3.数字不加入队列 但是要翻开 4.旗子不加入队列
         while (!gridQueue.isEmpty()){
-            gridQueue.remove(0);
+            Grid grid = gridQueue.remove(0);
+            x = grid.getX();
+            y = grid.getY();
+            System.out.println(gridQueue.size());
             if (x!=0) {
                 if (grids[x-1][y].getType() == GridType.EMPTY) {
                     gridQueue.add(grids[x - 1][y]);
