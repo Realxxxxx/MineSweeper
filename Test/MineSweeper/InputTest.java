@@ -14,7 +14,72 @@ import java.io.InputStream;
 
 public class InputTest {
     GameController controller;
+    Grid[][] testGrid;
+    private void initGameForTest(int bounds, Grid[][] grids){
+        // act as initGame
+        controller.model.setBounds(2);
+        controller.model.setGrids(grids);
+    }
 
+    private void makeUpTestGridSelected(){
+        /*
+           all grid are Selected!
+                1  2
+            1   B  D
+            2   D  E
+         */
+
+        testGrid = new Grid[2][2];
+
+        Grid boomGrid = new Grid(0, 0);
+        boomGrid.setType(GridType.BOOM);
+        boomGrid.setSelected(true);
+        testGrid[0][0] = boomGrid;
+
+        Grid dangerGrid1 = new Grid(0, 1);
+        dangerGrid1.setType(GridType.DANGEROUS);
+        dangerGrid1.setSelected(true);
+        testGrid[0][1] = dangerGrid1;
+
+        Grid dangerGrid2 = new Grid(1, 0);
+        dangerGrid2.setType(GridType.DANGEROUS);
+        dangerGrid1.setSelected(true);
+        testGrid[1][0] = dangerGrid2;
+
+        Grid emptyGrid = new Grid(1, 1);
+        emptyGrid.setType(GridType.EMPTY);
+        emptyGrid.setSelected(true);
+        testGrid[1][1] = emptyGrid;
+    }
+
+    
+    private void makeUpTestGridUnselected(){
+        /*
+           all grid are not Selected
+                1  2
+            1   B  D
+            2   D  E
+         */
+
+        testGrid = new Grid[2][2];
+
+        Grid boomGrid = new Grid(0, 0);
+        boomGrid.setType(GridType.BOOM);
+        testGrid[0][0] = boomGrid;
+
+        Grid dangerGrid1 = new Grid(0, 1);
+        dangerGrid1.setType(GridType.DANGEROUS);
+        testGrid[0][1] = dangerGrid1;
+
+        Grid dangerGrid2 = new Grid(1, 0);
+        dangerGrid2.setType(GridType.DANGEROUS);
+        testGrid[1][0] = dangerGrid2;
+
+        Grid emptyGrid = new Grid(1, 1);
+        emptyGrid.setType(GridType.EMPTY);
+        testGrid[1][1] = emptyGrid;
+    }
+    
     @Before
     public void SetUp() throws Exception{
         controller = new GameController();
@@ -157,6 +222,97 @@ public class InputTest {
         assertEquals(expected[0], bb[0], 0.001);
         assertEquals(expected[1], bb[1], 0.001);
     }
+    
+    @Test
+    public void testInputCoValid1() throws Exception{
+        // 正常输入
+        makeUpTestGridUnselected();
+        initGameForTest(2, testGrid);
+        String inputStr = "1,1,1";
+        InputStream is = new ByteArrayInputStream(inputStr.getBytes());
+        controller.view.setInStream(is);
+        int[] coordinate = controller.view.inputCo(2, testGrid);
+        int[] expected = new int[]{1,1,1};
+        assertEquals(expected[0], coordinate[0], 0.001);
+        assertEquals(expected[1], coordinate[1], 0.001);
+        assertEquals(expected[2], coordinate[2], 0.001);
+    }
+    
+    @Test
+    public void testInputCoValid2() throws Exception{
+        // 正常输入
+        makeUpTestGridUnselected();
+        initGameForTest(2, testGrid);
+        String inputStr = "1,1,2";
+        InputStream is = new ByteArrayInputStream(inputStr.getBytes());
+        controller.view.setInStream(is);
+        int[] coordinate = controller.view.inputCo(2, testGrid);
+        int[] expected = new int[]{1,1,2};
+        assertEquals(expected[0], coordinate[0], 0.001);
+        assertEquals(expected[1], coordinate[1], 0.001);
+        assertEquals(expected[2], coordinate[2], 0.001);
+    }
+    
+    @Test
+    public void testInputCoValid3() throws Exception{
+        // 正常输入
+        makeUpTestGridUnselected();
+        initGameForTest(2, testGrid);
+        String inputStr = "2,2,1";
+        InputStream is = new ByteArrayInputStream(inputStr.getBytes());
+        controller.view.setInStream(is);
+        int[] coordinate = controller.view.inputCo(2, testGrid);
+        int[] expected = new int[]{2,2,1};
+        assertEquals(expected[0], coordinate[0], 0.001);
+        assertEquals(expected[1], coordinate[1], 0.001);
+        assertEquals(expected[2], coordinate[2], 0.001);
+    }
+    
+    @Test
+    public void testInputCoInValid1() throws Exception{
+        //坐标不合理
+        makeUpTestGridUnselected();
+        initGameForTest(2, testGrid);
+        String inputStr = "-2,-2,1";
+        InputStream is = new ByteArrayInputStream(inputStr.getBytes());
+        controller.view.setInStream(is);
+        int[] coordinate = controller.view.inputCo(2, testGrid);
+        int[] expected = new int[]{-1,-1,1};
+        assertEquals(expected[0], coordinate[0], 0.001);
+        assertEquals(expected[1], coordinate[1], 0.001);
+        assertEquals(expected[2], coordinate[2], 0.001);
+    }
+    
+    @Test
+    public void testInputCoInValid2() throws Exception{
+        //模式不合理
+        makeUpTestGridUnselected();
+        initGameForTest(2, testGrid);
+        String inputStr = "1,1,3";
+        InputStream is = new ByteArrayInputStream(inputStr.getBytes());
+        controller.view.setInStream(is);
+        int[] coordinate = controller.view.inputCo(2, testGrid);
+        int[] expected = new int[]{1,1,-1};
+        assertEquals(expected[0], coordinate[0], 0.001);
+        assertEquals(expected[1], coordinate[1], 0.001);
+        assertEquals(expected[2], coordinate[2], 0.001);
+    }
+    
+    @Test
+    public void testInputCoInValid3() throws Exception{
+        //模式，坐标不合理
+        makeUpTestGridUnselected();
+        initGameForTest(2, testGrid);
+        String inputStr = "-2,-2,3";
+        InputStream is = new ByteArrayInputStream(inputStr.getBytes());
+        controller.view.setInStream(is);
+        int[] coordinate = controller.view.inputCo(2, testGrid);
+        int[] expected = new int[]{-1,-1,-1};
+        assertEquals(expected[0], coordinate[0], 0.001);
+        assertEquals(expected[1], coordinate[1], 0.001);
+        assertEquals(expected[2], coordinate[2], 0.001);
+    }
+    
 
 
 }
