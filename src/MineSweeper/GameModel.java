@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Vector;
 import java.util.Random;
 
+/**
+ * @author Xiong,Shen
+ */
 public class GameModel {
     public int bounds;
     public Grid[][] grids;
@@ -27,30 +30,18 @@ public class GameModel {
     // 独立出来以供测试
     public Grid[][] generateMap(int bounds, int numOfBooms){
         Grid[][] grids = new Grid[bounds][bounds];
-        for (int i = 0; i <bounds ; i++) {
-            for (int j = 0; j <bounds ; j++) {
-                grids[i][j] = new Grid(i,j);
-                grids[i][j].setType(GridType.EMPTY);
-            }
-        }
+        GenerateEmptyMap(bounds, grids);
         Random rand = new Random();
+        PutBoomsInMap(bounds, numOfBooms, grids, rand);
+        SetBoomsAroundInMap(bounds, grids);
+        return grids;
 
-        for (int i = 0; i < numOfBooms; i++) {
-            int posX = rand.nextInt(bounds);
-            int posY = rand.nextInt(bounds);
-            while (true) {
-                if (grids[posX][posY].getType() != GridType.BOOM) {
-                    grids[posX][posY].setType(GridType.BOOM);
-                    break;
-                }
-                posX = rand.nextInt(bounds);
-                posY = rand.nextInt(bounds);
-            }
-        }
-        // 为所有位置赋值BoomsAround
+    }
+
+    private Grid[][] SetBoomsAroundInMap(int bounds, Grid[][] grids) {
         for (int i = 0; i <bounds ; i++) {
             for (int j = 0; j <bounds ; j++) {
-                if (grids[i][j].getType()==GridType.EMPTY) {
+                if (grids[i][j].getType()== GridType.EMPTY) {
                     if (i > 0) {
                         if (grids[i - 1][j].getType() == GridType.BOOM) {
                             grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
@@ -82,7 +73,7 @@ public class GameModel {
                         }
                     }
                     if (i < bounds - 1 && j < bounds - 1) {
-                        if (grids[i + 1][+1].getType() == GridType.BOOM) {
+                        if (grids[i + 1][j+1].getType() == GridType.BOOM) {
                             grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
                         }
                     }
@@ -98,7 +89,30 @@ public class GameModel {
             }
         }
         return grids;
+    }
 
+    private void PutBoomsInMap(int bounds, int numOfBooms, Grid[][] grids, Random rand) {
+        for (int i = 0; i < numOfBooms; i++) {
+            int posX = rand.nextInt(bounds);
+            int posY = rand.nextInt(bounds);
+            while (true) {
+                if (grids[posX][posY].getType() != GridType.BOOM) {
+                    grids[posX][posY].setType(GridType.BOOM);
+                    break;
+                }
+                posX = rand.nextInt(bounds);
+                posY = rand.nextInt(bounds);
+            }
+        }
+    }
+
+    private void GenerateEmptyMap(int bounds, Grid[][] grids) {
+        for (int i = 0; i <bounds ; i++) {
+            for (int j = 0; j <bounds ; j++) {
+                grids[i][j] = new Grid(i,j);
+                grids[i][j].setType(GridType.EMPTY);
+            }
+        }
     }
 
     //初始化盘大小，地雷数目，grids
@@ -141,17 +155,23 @@ public class GameModel {
             y = grid.getY();
             // 挑选出备选进入加入队列的格子
             ArrayList<Grid> trackGridsList = new ArrayList<>();
-            if (x!=0)
-                trackGridsList.add(grids[x-1][y]);
-            if (y!=0)
-                trackGridsList.add(grids[x][y-1]);
-            if (x!=bounds-1)
-                trackGridsList.add(grids[x+1][y]);
-            if (y!=bounds-1)
-                trackGridsList.add(grids[x][y+1]);
+            if (x!=0) {
+                trackGridsList.add(grids[x - 1][y]);
+            }
+            if (y!=0) {
+                trackGridsList.add(grids[x][y - 1]);
+            }
+            if (x!=bounds-1) {
+                trackGridsList.add(grids[x + 1][y]);
+            }
+            if (y!=bounds-1) {
+                trackGridsList.add(grids[x][y + 1]);
+            }
             for (Grid trackGrid: trackGridsList) {
                 if (trackGrid.getType() != GridType.BOOM && !trackGrid.isSelected()) {
-                    gridQueue.add(trackGrid);
+                    if (trackGrid.getType() == GridType.EMPTY) {
+                        gridQueue.add(trackGrid);
+                    }
                     trackGrid.setSelected(true);
                 }
             }
@@ -202,32 +222,37 @@ public class GameModel {
             return;
         }
         // 判断游戏是否胜利
-        for (int x = 0; x < grids.length; x++)
-            for (int y = 0; y < grids[0].length; y++){
+        for (int x = 0; x < grids.length; x++) {
+            for (int y = 0; y < grids[0].length; y++) {
                 // 只需存在BOOM+isflag 和 !BOOM+isSelected
                 Grid g = grids[x][y];
                 if ((g.getType() == GridType.BOOM && g.isFlag()) ||
-                     g.getType() != GridType.BOOM && g.isSelected()){
+                        g.getType() != GridType.BOOM && g.isSelected()) {
                     continue;
-                }
-                else {
+                } else {
                     this.state = GameState.InGame;
                     return;
                 }
             }
+        }
         // 全部通过之后
         this.state = GameState.Win;
 
     }
 
     public boolean isBooming(Grid[][] grids, int x, int y){
-        if (grids[x][y].getType() == GridType.BOOM && grids[x][y].isSelected())
+        if (grids[x][y].getType() == GridType.BOOM && grids[x][y].isSelected()) {
             return true;
+        }
         return false;
     }
 
-    //判断胜利  见函数isGameWin和isBooming 想把该函数拆分为 检测触雷+检测胜利
-    // 把判断游戏胜利的逻辑 提出到Controller里进行判断
+    /*
+    *
+    *
+    * 判断胜利  见函数isGameWin和isBooming 想把该函数拆分为 检测触雷+检测胜利
+    * 把判断游戏胜利的逻辑 提出到Controller里进行判断
+    */
     public int isWin(Grid[][] grids, int x, int y){
 
         if (grids[x][y].getType() == GridType.BOOM && grids[x][y].isSelected()){
@@ -263,21 +288,26 @@ public class GameModel {
      */
 
     // 插旗操作
+
     public int markGridFlag(Grid[][] grids, int x, int y){
         int result ;
-        if (grids[x][y].isSelected()) { // 该格子已经被翻开
+        if (grids[x][y].isSelected()) {
+            // 该格子已经被翻开
             System.out.println("该位置已经被打开");
-            result = 1; // 插旗翻开的格子
+            result = 1;
+            // 插旗翻开的格子
 
         } else if (grids[x][y].isFlag()){
             System.out.println("该位置已经被插旗,即将拔旗");
             grids[x][y].setFlag(false);
             this.grids = grids;
-            result = 2;// 拔旗
+            result = 2;
+            // 拔旗
         } else { // 插旗未打开的格子
             grids[x][y].setFlag(true);
             this.grids = grids;
-            result = 0;// 成功插旗
+            result = 0;
+            // 成功插旗
         }
         return result;
     }

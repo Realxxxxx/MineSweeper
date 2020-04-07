@@ -1,5 +1,8 @@
 package MineSweeper;
 
+/**
+ * @author Xiong,Shen
+ */
 public class GameController {
     //判断view传来的消息应该调用model的哪些方法
     public GameModel model;
@@ -30,14 +33,19 @@ public class GameController {
 //            int isOver = 0;
 //            System.out.println(pos[2]);
             // 2.执行玩家操作指令
-            if (pos[2] == 1) { // 翻开操作
+            if (pos[2] == 1) {
+                // 翻开操作
                 this.model.filpGrid(this.model.grids, pos[1]-1, pos[0]-1);
-            }else if(pos[2] == 2){  // 插旗操作
+            }else if(pos[2] == 2){
+                // 插旗操作
                 int flagResult = this.model.markGridFlag(this.model.grids, pos[1]-1, pos[0]-1);
             }
             // 3. 判断游戏是否结束
-            if (!debug) // debug则游戏不结束
+            // debug则游戏不结束
+            if (!debug)
+            {
                 this.model.isGameWin();
+            }
             // 4. 绘制游戏
             this.view.drawGame(this.model.grids);
             // 5. 是否跳出主循环
