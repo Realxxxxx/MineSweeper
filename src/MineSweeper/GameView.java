@@ -50,7 +50,7 @@ public class GameView {
 
             for (int x = 0; x < horizontalLength; x++) {
                 Grid griddraw = grids[x][y];
-                if (griddraw.isFlag())
+                if (griddraw.isFlag()&& !griddraw.isSelected())
 //                    System.out.print(" ♠ ");
                     System.out.print(" F ");
                 // debug
