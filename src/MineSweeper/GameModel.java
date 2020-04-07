@@ -1,6 +1,8 @@
 package MineSweeper;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Vector;
 import java.util.Random;
 
@@ -28,79 +30,115 @@ public class GameModel {
 
     // 独立出来以供测试
     public Grid[][] generateMap(int bounds, int numOfBooms){
-        Grid[][] grids = new Grid[bounds][bounds];
-        for (int i = 0; i <bounds ; i++) {
-            for (int j = 0; j <bounds ; j++) {
-                grids[i][j] = new Grid(i,j);
-                grids[i][j].setType(GridType.EMPTY);
-            }
-        }
-        Random rand = new Random();
-
-        for (int i = 0; i < numOfBooms; i++) {
-            int posX = rand.nextInt(bounds);
-            int posY = rand.nextInt(bounds);
-            while (true) {
-                if (grids[posX][posY].getType() != GridType.BOOM) {
-                    grids[posX][posY].setType(GridType.BOOM);
-                    break;
-                }
-                posX = rand.nextInt(bounds);
-                posY = rand.nextInt(bounds);
-            }
-        }
-        // 为所有位置赋值BoomsAround
-        for (int i = 0; i <bounds ; i++) {
-            for (int j = 0; j <bounds ; j++) {
-                if (grids[i][j].getType()==GridType.EMPTY) {
-                    if (i > 0) {
-                        if (grids[i - 1][j].getType() == GridType.BOOM) {
-                            grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
-                        }
-                    }
-                    if (i > 0 && j < bounds - 1) {
-                        if (grids[i - 1][j + 1].getType() == GridType.BOOM) {
-                            grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
-                        }
-                    }
-                    if (i > 0 && j > 0) {
-                        if (grids[i - 1][j - 1].getType() == GridType.BOOM) {
-                            grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
-                        }
-                    }
-                    if (j > 0) {
-                        if (grids[i][j - 1].getType() == GridType.BOOM) {
-                            grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
-                        }
-                    }
-                    if (i < bounds - 1) {
-                        if (grids[i + 1][j].getType() == GridType.BOOM) {
-                            grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
-                        }
-                    }
-                    if (i < bounds - 1 && j > 0) {
-                        if (grids[i + 1][j - 1].getType() == GridType.BOOM) {
-                            grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
-                        }
-                    }
-                    if (i < bounds - 1 && j < bounds - 1) {
-                        if (grids[i + 1][+1].getType() == GridType.BOOM) {
-                            grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
-                        }
-                    }
-                    if (j < bounds - 1) {
-                        if (grids[i][j + 1].getType() == GridType.BOOM) {
-                            grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
-                        }
-                    }
-                    if (grids[i][j].getBoomsAround()>0){
-                        grids[i][j].setType(GridType.DANGEROUS);
-                    }
-                }
-            }
-        }
+        Grid[][] grids = GenerateEmptyMap(bounds);
+        PutBoomsInMap(bounds, numOfBooms, grids);
+        SetBoomsAroundInMap(bounds, grids);
         return grids;
 
+    }
+
+    public int SetBoomsAroundInMap(int bounds, Grid[][] grids) {
+        try {
+            if (bounds<0||grids==null){
+                return -1;
+            }
+            for (int i = 0; i < bounds; i++) {
+                for (int j = 0; j < bounds; j++) {
+                    if (grids[i][j].getType() == GridType.EMPTY) {
+                        if (i > 0) {
+                            if (grids[i - 1][j].getType() == GridType.BOOM) {
+                                grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
+                            }
+                        }
+                        if (i > 0 && j < bounds - 1) {
+                            if (grids[i - 1][j + 1].getType() == GridType.BOOM) {
+                                grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
+                            }
+                        }
+                        if (i > 0 && j > 0) {
+                            if (grids[i - 1][j - 1].getType() == GridType.BOOM) {
+                                grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
+                            }
+                        }
+                        if (j > 0) {
+                            if (grids[i][j - 1].getType() == GridType.BOOM) {
+                                grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
+                            }
+                        }
+                        if (i < bounds - 1) {
+                            if (grids[i + 1][j].getType() == GridType.BOOM) {
+                                grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
+                            }
+                        }
+                        if (i < bounds - 1 && j > 0) {
+                            if (grids[i + 1][j - 1].getType() == GridType.BOOM) {
+                                grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
+                            }
+                        }
+                        if (i < bounds - 1 && j < bounds - 1) {
+                            if (grids[i + 1][j + 1].getType() == GridType.BOOM) {
+                                grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
+                            }
+                        }
+                        if (j < bounds - 1) {
+                            if (grids[i][j + 1].getType() == GridType.BOOM) {
+                                grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
+                            }
+                        }
+                        if (grids[i][j].getBoomsAround() > 0) {
+                            grids[i][j].setType(GridType.DANGEROUS);
+                        }
+                    }
+                }
+            }
+            return 0;
+        }catch (Exception e){
+            return -1;
+        }
+
+    }
+
+    public int PutBoomsInMap(int bounds, int numOfBooms, Grid[][] grids) {
+        try {
+            if (numOfBooms<=0 || numOfBooms>=bounds*bounds || bounds>grids.length){
+                return -1;
+            }else {
+                Random rand = new Random();
+                for (int i = 0; i < numOfBooms; i++) {
+                    int posX = rand.nextInt(bounds);
+                    int posY = rand.nextInt(bounds);
+                    while (true) {
+                        if (grids[posX][posY].getType() != GridType.BOOM) {
+                            grids[posX][posY].setType(GridType.BOOM);
+                            break;
+                        }
+                        posX = rand.nextInt(bounds);
+                        posY = rand.nextInt(bounds);
+                    }
+                }
+            }
+            return 0;
+        }catch (Exception e){
+            System.out.print(e);
+            return -1;
+        }
+
+    }
+
+    public Grid[][] GenerateEmptyMap(int bounds) {
+        try {
+            Grid[][] grids = new Grid[bounds][bounds];
+            for (int i = 0; i < bounds; i++) {
+                for (int j = 0; j < bounds; j++) {
+                    grids[i][j] = new Grid(i, j);
+                    grids[i][j].setType(GridType.EMPTY);
+                }
+            }
+            return grids;
+        }catch (Exception e){
+            System.out.print(e);
+            return null;
+        }
     }
 
     //初始化盘大小，地雷数目，grids
@@ -166,44 +204,6 @@ public class GameModel {
             }
         }
         return 1;
-            // 处理左边一格
-//            System.out.println(gridQueue.size());
-//            if (x!=0) {
-//                if (grids[x-1][y].getType() == GridType.EMPTY) {
-//                    gridQueue.add(grids[x - 1][y]);
-//                    grids[x - 1][y].setSelected(true);
-//                }else if (grids[x-1][y].getType() == GridType.DANGEROUS) {
-//                    grids[x - 1][y].setSelected(true);
-//                }
-//            }
-
-//            // 处理上边一格
-//            if (y!=0){
-//                if (grids[x][y-1].getType() == GridType.EMPTY) {
-//                    gridQueue.add(grids[x][y-1]);
-//                    grids[x][y-1].setSelected(true);
-//                }else if (grids[x][y-1].getType() == GridType.DANGEROUS) {
-//                    grids[x][y-1].setSelected(true);
-//                }
-//            }
-//            // 处理右边一个
-//            if (x!=bounds-1){
-//                if (grids[x+1][y].getType() == GridType.EMPTY) {
-//                    gridQueue.add(grids[x + 1][y]);
-//                    grids[x + 1][y].setSelected(true);
-//                }else if (grids[x+1][y].getType() == GridType.DANGEROUS) {
-//                    grids[x + 1][y].setSelected(true);
-//                }
-//            }
-//            // 处理上边一个
-//            if (y!=bounds-1){
-//                if (grids[x][y+1].getType() == GridType.EMPTY) {
-//                    gridQueue.add(grids[x][y+1]);
-//                    grids[x][y+1].setSelected(true);
-//                }else if (grids[x][y+1].getType() == GridType.DANGEROUS) {
-//                    grids[x][y+1].setSelected(true);
-//                }
-//            }
     }
 
     public void isGameWin(){
@@ -259,18 +259,6 @@ public class GameModel {
 
         return 0;
     }
-
-    //响应view消息改变Grid的属性
-    /*
-        public void changeGridAttr(Grid[][] grids, int x, int y){
-        if (grids[x][y].getType() == GridType.FLAG){
-            System.out.println("该位置已经被插旗");
-        }
-
-        grids[x][y].setType(GridType.FLAG);
-        this.grids = grids;
-    }
-     */
 
     // 插旗操作
     public int markGridFlag(Grid[][] grids, int x, int y){

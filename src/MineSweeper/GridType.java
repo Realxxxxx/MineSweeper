@@ -1,5 +1,10 @@
 package MineSweeper;
 
 public enum GridType {
-    BOOM,EMPTY,DANGEROUS
+    //炸弹格
+    BOOM,
+    //空格
+    EMPTY,
+    //有数字的格
+    DANGEROUS
 }
