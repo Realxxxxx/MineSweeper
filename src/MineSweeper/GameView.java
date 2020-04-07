@@ -4,9 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
 
-/**
- * @author Zhao,Yang,Shen,Xiong
- */
 public class GameView {
     //根据grid的属性来绘制对应的格子
 
@@ -20,11 +17,9 @@ public class GameView {
     }
 
     public void drawGame(Grid[][] grids){
-        // 列数
-        int horizontalLength = grids[0].length;
-        // 行数
-        int verticalLength = grids.length;
-
+        //
+        int horizontalLength = grids[0].length;   // 列数
+        int verticalLength = grids.length;        // 行数
 
         //最大行列数设定为20
         //没有翻开为 □ ，empty为■，BOOM为×，Flag为♠
@@ -50,24 +45,21 @@ public class GameView {
         // 输出实际内容
         for(int y = 0; y < verticalLength; y++ ) {
             System.out.print(y + 1);
-            if (y < 9){
+            if (y < 9)
                 System.out.print(" ");
-            }
 
             for (int x = 0; x < horizontalLength; x++) {
                 Grid griddraw = grids[x][y];
-                if (griddraw.isFlag()) {
-
+                if (griddraw.isFlag())
+//                    System.out.print(" ♠ ");
                     System.out.print(" F ");
-                }// debug
+                // debug
 //                else if (!griddraw.isSelected())
-
-                else if (griddraw.getType() == GridType.EMPTY) {
+//                    System.out.print(" ■ ");
+                else if (griddraw.getType() == GridType.EMPTY)
                     System.out.print(" □ ");
-                }
-                else if (griddraw.getType() == GridType.BOOM) {
+                else if (griddraw.getType() == GridType.BOOM)
                     System.out.print(" × ");
-                }
                 else if (griddraw.getType() == GridType.DANGEROUS) {
                     System.out.print(" ");
                     System.out.print(griddraw.getBoomsAround());
@@ -81,13 +73,12 @@ public class GameView {
     public boolean isGridRight(Grid[][] grids, int row, int column, GridType gt)
     {
         boolean isRight = false;
-        if (grids[row][column].getType() == gt) {
+        if (grids[row][column].getType() == gt)
             isRight = true;
-        }
         return isRight;
     }
 
-
+    //具体输入函数
     public int[] inputBoundAndBoom() {
     	int[] bb = new int[2];
     	//bb[0]为边界，bb[1]为雷数
@@ -97,12 +88,9 @@ public class GameView {
             while(true) {
                 if (scan.hasNextLine()) {
                     String str = scan.nextLine();
-                    // 去除前后空格
-                    str = str.trim();
-                    // 顺便处理中文逗号
-                    str = str.replaceAll("，", ",");
-                    // 根据逗号或者空格分隔
-                    String[] buff =  str.split("\\s+,|,\\s+|,|\\s+");
+                    str = str.trim(); // 去除前后空格
+                    str = str.replaceAll("，", ",");  // 顺便处理中文逗号
+                    String[] buff =  str.split("\\s+,|,\\s+|,|\\s+");// 根据逗号或者空格分隔
                     if (buff.length != 2) {
                         bb = new int[]{-2, -2};
                         System.out.println("输入参数数量不对");
@@ -143,17 +131,12 @@ public class GameView {
     	while(true) {
             if (scan.hasNextLine()) {
                 String str = scan.nextLine();
-                // 去除前后空格
-                str = str.trim();
-                // 顺便处理中文逗号
-                str = str.replaceAll("，", ",");
+                str = str.trim(); // 去除前后空格
+                str = str.replaceAll("，", ",");  // 顺便处理中文逗号
                 String[] buff = str.split("\\s+,|,\\s+|,|\\s+");
-                // x
-                coordinate[0] = Integer.parseInt(buff[0]);
-                // y
-                coordinate[1] = Integer.parseInt(buff[1]);
-                // perform
-                coordinate[2] = Integer.parseInt(buff[2]);
+                coordinate[0] = Integer.parseInt(buff[0]); // x
+                coordinate[1] = Integer.parseInt(buff[1]); // y
+                coordinate[2] = Integer.parseInt(buff[2]); // perform
             }
 
             if ((coordinate[2] != 1 && coordinate[2] != 2)) {
@@ -171,7 +154,6 @@ public class GameView {
 ////                coordinate = new int[]{coordinate[0], coordinate[1], -2}; // 第三个值返回-2 代表操作失败
 ////                break;
 //            }
-
             // 此处的coor[0] coor[1]   ->  x+1 y+1
             if (!(coordinate[0] <= bounds
                     && coordinate[0] > 0
