@@ -19,14 +19,16 @@ public class GameEventTest {
         this.controller.model.setBoomsAroundInMap(controller.model.bounds,
                 controller.model.grids);
     }
+
     private void makeUpTestGridFlag(){
         testGrid = new Grid[1][1];
 
-        Grid flagGrid = new Grid(0, 0);
-        flagGrid.setType(GridType.EMPTY);
-        flagGrid.setSelected(false);
-        flagGrid.setFlag(true);
-        testGrid[0][0] = flagGrid;
+        Grid boomGrid = new Grid(0, 0);
+        boomGrid.setType(GridType.EMPTY);
+        boomGrid.setFlag(true);
+        boomGrid.setSelected(false);
+        testGrid[0][0] = boomGrid;
+
     }
 
     private void makeUpTestGridSelected(){
@@ -200,6 +202,22 @@ public class GameEventTest {
     }
 
     @Test
+    public void testFilpConnect(){
+        makeUpTestGridConnect();
+        initGameForTest(3, testGrid);
+        this.controller.model.setBoomsAroundInMap(
+                controller.model.bounds,
+                controller.model.grids);
+
+        controller.model.filpGrid(controller.model.grids, 0, 2);
+        assertTrue(controller.model.grids[0][2].isSelected());
+        assertTrue(controller.model.grids[1][2].isSelected());
+        assertTrue(controller.model.grids[2][2].isSelected());
+        assertTrue(controller.model.grids[2][0].isSelected());
+        assertTrue(controller.model.grids[2][1].isSelected());
+    }
+
+    @Test
     public void testFilpFlag(){
         makeUpTestGridFlag();
         initGameForTest(1, testGrid);
@@ -213,7 +231,5 @@ public class GameEventTest {
         assertFalse(controller.model.grids[0][0].isSelected());
 
     }
-
-
 
 }
