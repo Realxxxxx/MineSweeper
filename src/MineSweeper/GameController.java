@@ -4,7 +4,7 @@ public class GameController {
     //判断view传来的消息应该调用model的哪些方法
     public GameModel model;
     public GameView view;
-    private boolean debug = true;
+    private boolean debug = false;
 
     public GameController() {
         this.model = new GameModel();
@@ -35,8 +35,11 @@ public class GameController {
                 int flagResult = this.model.markGridFlag(this.model.grids, pos[1]-1, pos[0]-1);
             }
             // 3. 判断游戏是否结束
-            if (!debug) // debug则游戏不结束
+            if (!debug) {
+                // debug则游戏不结束
                 this.model.isGameWin();
+            }
+
             // 4. 绘制游戏
             this.view.drawGame(this.model.grids);
             // 5. 是否跳出主循环

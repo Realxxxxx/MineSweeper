@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="70d5d56a-bea3-4810-8471-643496b8dcdc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="71f0a18d-4c8e-475a-a1a2-bbebd1745328" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/MineSweeper/GameEventTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/MineSweeper/GameEventTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/MineSweeper/MapGenerateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/MineSweeper/MapGenerateTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameView.java" afterDir="false" />
     </list>
@@ -15,6 +16,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="193" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -59,7 +63,8 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="Application.GameManager">
     <configuration name="GameManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -71,6 +76,21 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoomsSetUpTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MineSweeper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MineSweeper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="MineSweeper" />
+      <option name="MAIN_CLASS_NAME" value="MineSweeper.BoomsSetUpTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -90,7 +110,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameEventTest.testFlipBoom" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MapGenerateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MineSweeper" />
       <extension name="coverage">
         <pattern>
@@ -99,14 +119,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="MineSweeper" />
-      <option name="MAIN_CLASS_NAME" value="MineSweeper.GameEventTest" />
-      <option name="METHOD_NAME" value="testFlipBoom" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="MineSweeper.MapGenerateTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InputTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SetBoomAroundNumTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MineSweeper" />
       <extension name="coverage">
         <pattern>
@@ -115,7 +134,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="MineSweeper" />
-      <option name="MAIN_CLASS_NAME" value="MineSweeper.InputTest" />
+      <option name="MAIN_CLASS_NAME" value="MineSweeper.SetBoomAroundNumTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -124,9 +143,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.GameManager" />
-        <item itemvalue="JUnit.GameEventTest" />
-        <item itemvalue="JUnit.InputTest" />
-        <item itemvalue="JUnit.GameEventTest.testFlipBoom" />
+        <item itemvalue="JUnit.MapGenerateTest" />
+        <item itemvalue="JUnit.BoomsSetUpTest" />
+        <item itemvalue="JUnit.SetBoomAroundNumTest" />
         <item itemvalue="JUnit.GameEventTest" />
       </list>
     </recent_temporary>
@@ -136,7 +155,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="70d5d56a-bea3-4810-8471-643496b8dcdc" name="Default Changelist" comment="" />
+      <changelist id="71f0a18d-4c8e-475a-a1a2-bbebd1745328" name="Default Changelist" comment="" />
       <created>1585565874849</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -154,6 +173,12 @@
       <workItem from="1586182585712" duration="6427000" />
       <workItem from="1586233584836" duration="278000" />
       <workItem from="1586233932946" duration="21000" />
+      <workItem from="1586251472573" duration="2044000" />
+      <workItem from="1586253957428" duration="333000" />
+      <workItem from="1586254307860" duration="4046000" />
+      <workItem from="1586259139886" duration="1086000" />
+      <workItem from="1586260297385" duration="2652000" />
+      <workItem from="1586402496661" duration="645000" />
     </task>
     <task id="LOCAL-00001" summary="&lt;MOD&gt; filpGrid">
       <created>1586144472780</created>
@@ -167,6 +192,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -201,6 +236,10 @@
       <screen x="0" y="23" width="2560" height="1359" />
     </state>
     <state x="834" y="858" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1586079849873" />
+    <state x="655" y="562" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1586262903322">
+      <screen x="0" y="23" width="2560" height="1359" />
+    </state>
+    <state x="655" y="562" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.2560.1359@0.23.2560.1359" timestamp="1586262903322" />
     <state x="238" y="0" key="CommitChangelistDialog2" timestamp="1586144471742">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -213,59 +252,68 @@
     </state>
     <state x="93" y="93" width="1095" height="504" key="DiffContextDialog/0.0.1280.689@0.0.1280.689" timestamp="1586233569939" />
     <state x="392" y="187" width="1200" height="1094" key="DiffContextDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1586250950095" />
-    <state width="1358" height="286" key="GridCell.Tab.0.bottom" timestamp="1586251014686">
-      <screen x="0" y="23" width="2560" height="1359" />
+    <state width="1358" height="675" key="GridCell.Tab.0.bottom" timestamp="1586265348175">
+      <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state width="1237" height="213" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1586189625772" />
     <state width="1358" height="197" key="GridCell.Tab.0.bottom/0.23.1440.821@0.23.1440.821" timestamp="1586051364408" />
-    <state width="1358" height="286" key="GridCell.Tab.0.bottom/0.23.2560.1359@0.23.2560.1359" timestamp="1586251014686" />
-    <state width="1358" height="286" key="GridCell.Tab.0.center" timestamp="1586251014685">
-      <screen x="0" y="23" width="2560" height="1359" />
+    <state width="1358" height="675" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1586265348175" />
+    <state width="1358" height="981" key="GridCell.Tab.0.bottom/0.23.2560.1359@0.23.2560.1359" timestamp="1586263055925" />
+    <state width="1358" height="675" key="GridCell.Tab.0.center" timestamp="1586265348175">
+      <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state width="1237" height="213" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1586189625772" />
     <state width="1358" height="197" key="GridCell.Tab.0.center/0.23.1440.821@0.23.1440.821" timestamp="1586051364407" />
-    <state width="1358" height="286" key="GridCell.Tab.0.center/0.23.2560.1359@0.23.2560.1359" timestamp="1586251014685" />
-    <state width="1358" height="286" key="GridCell.Tab.0.left" timestamp="1586251014685">
-      <screen x="0" y="23" width="2560" height="1359" />
+    <state width="1358" height="675" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1586265348175" />
+    <state width="1358" height="981" key="GridCell.Tab.0.center/0.23.2560.1359@0.23.2560.1359" timestamp="1586263055924" />
+    <state width="1358" height="675" key="GridCell.Tab.0.left" timestamp="1586265348174">
+      <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state width="1237" height="213" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1586189625771" />
     <state width="1358" height="197" key="GridCell.Tab.0.left/0.23.1440.821@0.23.1440.821" timestamp="1586051364407" />
-    <state width="1358" height="286" key="GridCell.Tab.0.left/0.23.2560.1359@0.23.2560.1359" timestamp="1586251014685" />
-    <state width="1358" height="286" key="GridCell.Tab.0.right" timestamp="1586251014685">
-      <screen x="0" y="23" width="2560" height="1359" />
+    <state width="1358" height="675" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1586265348174" />
+    <state width="1358" height="981" key="GridCell.Tab.0.left/0.23.2560.1359@0.23.2560.1359" timestamp="1586263055924" />
+    <state width="1358" height="675" key="GridCell.Tab.0.right" timestamp="1586265348175">
+      <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state width="1237" height="213" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1586189625772" />
     <state width="1358" height="197" key="GridCell.Tab.0.right/0.23.1440.821@0.23.1440.821" timestamp="1586051364407" />
-    <state width="1358" height="286" key="GridCell.Tab.0.right/0.23.2560.1359@0.23.2560.1359" timestamp="1586251014685" />
-    <state width="1358" height="298" key="GridCell.Tab.1.bottom" timestamp="1586084656282">
-      <screen x="0" y="23" width="2560" height="1359" />
+    <state width="1358" height="675" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1586265348175" />
+    <state width="1358" height="981" key="GridCell.Tab.0.right/0.23.2560.1359@0.23.2560.1359" timestamp="1586263055925" />
+    <state width="1358" height="451" key="GridCell.Tab.1.bottom" timestamp="1586265348169">
+      <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1358" height="298" key="GridCell.Tab.1.bottom/0.23.2560.1359@0.23.2560.1359" timestamp="1586084656282" />
-    <state width="1358" height="298" key="GridCell.Tab.1.center" timestamp="1586084656282">
-      <screen x="0" y="23" width="2560" height="1359" />
+    <state width="1358" height="451" key="GridCell.Tab.1.bottom/0.23.1440.826@0.23.1440.826" timestamp="1586265348169" />
+    <state width="1358" height="451" key="GridCell.Tab.1.bottom/0.23.2560.1359@0.23.2560.1359" timestamp="1586260323620" />
+    <state width="1358" height="451" key="GridCell.Tab.1.center" timestamp="1586265348169">
+      <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1358" height="298" key="GridCell.Tab.1.center/0.23.2560.1359@0.23.2560.1359" timestamp="1586084656282" />
-    <state width="1358" height="298" key="GridCell.Tab.1.left" timestamp="1586084656281">
-      <screen x="0" y="23" width="2560" height="1359" />
+    <state width="1358" height="451" key="GridCell.Tab.1.center/0.23.1440.826@0.23.1440.826" timestamp="1586265348169" />
+    <state width="1358" height="451" key="GridCell.Tab.1.center/0.23.2560.1359@0.23.2560.1359" timestamp="1586260323619" />
+    <state width="1358" height="451" key="GridCell.Tab.1.left" timestamp="1586265348169">
+      <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1358" height="298" key="GridCell.Tab.1.left/0.23.2560.1359@0.23.2560.1359" timestamp="1586084656281" />
-    <state width="1358" height="298" key="GridCell.Tab.1.right" timestamp="1586084656282">
-      <screen x="0" y="23" width="2560" height="1359" />
+    <state width="1358" height="451" key="GridCell.Tab.1.left/0.23.1440.826@0.23.1440.826" timestamp="1586265348169" />
+    <state width="1358" height="451" key="GridCell.Tab.1.left/0.23.2560.1359@0.23.2560.1359" timestamp="1586260323619" />
+    <state width="1358" height="451" key="GridCell.Tab.1.right" timestamp="1586265348169">
+      <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1358" height="298" key="GridCell.Tab.1.right/0.23.2560.1359@0.23.2560.1359" timestamp="1586084656282" />
-    <state x="51" y="45" width="1197" height="586" key="MergeDialog" timestamp="1586141462651">
-      <screen x="0" y="0" width="1280" height="689" />
+    <state width="1358" height="451" key="GridCell.Tab.1.right/0.23.1440.826@0.23.1440.826" timestamp="1586265348169" />
+    <state width="1358" height="451" key="GridCell.Tab.1.right/0.23.2560.1359@0.23.2560.1359" timestamp="1586260323620" />
+    <state x="102" y="112" width="1197" height="586" key="MergeDialog" timestamp="1586597602896">
+      <screen x="0" y="23" width="2560" height="1359" />
     </state>
     <state x="51" y="45" width="1197" height="586" key="MergeDialog/0.0.1280.689@0.0.1280.689" timestamp="1586141462651" />
-    <state x="261" y="123" key="MultipleFileMergeDialog" timestamp="1586141465513">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state x="261" y="123" key="MultipleFileMergeDialog/0.0.1280.689@0.0.1280.689" timestamp="1586141465513" />
-    <state x="775" y="517" key="MultipleFileMergeDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1586080746074" />
-    <state x="493" y="590" key="SettingsEditor" timestamp="1586079827908">
+    <state x="102" y="112" key="MergeDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1586597602896" />
+    <state x="775" y="517" key="MultipleFileMergeDialog" timestamp="1586597602932">
       <screen x="0" y="23" width="2560" height="1359" />
     </state>
-    <state x="493" y="590" key="SettingsEditor/0.23.2560.1359@0.23.2560.1359" timestamp="1586079827908" />
+    <state x="261" y="123" key="MultipleFileMergeDialog/0.0.1280.689@0.0.1280.689" timestamp="1586141465513" />
+    <state x="775" y="517" key="MultipleFileMergeDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1586597602932" />
+    <state x="918" y="458" key="SettingsEditor" timestamp="1586260402140">
+      <screen x="0" y="23" width="2560" height="1359" />
+    </state>
+    <state x="918" y="458" key="SettingsEditor/0.23.2560.1359@0.23.2560.1359" timestamp="1586260402140" />
     <state x="488" y="266" key="VCS.ChangelistChooser" timestamp="1586233653455">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -282,24 +330,29 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="93" y="93" width="1095" height="504" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.1280.689@0.0.1280.689" timestamp="1586141483023" />
-    <state x="399" y="265" key="com.intellij.ide.util.TipDialog" timestamp="1586049100048">
-      <screen x="0" y="23" width="1440" height="822" />
+    <state x="307" y="152" width="1200" height="1094" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586252909644">
+      <screen x="0" y="23" width="2560" height="1359" />
+    </state>
+    <state x="307" y="152" width="1200" height="1094" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1586252909644" />
+    <state x="709" y="423" key="com.intellij.ide.util.TipDialog" timestamp="1586597546528">
+      <screen x="0" y="23" width="2560" height="1359" />
     </state>
     <state x="399" y="263" key="com.intellij.ide.util.TipDialog/0.23.1440.816@0.23.1440.816" timestamp="1586005367860" />
     <state x="399" y="265" key="com.intellij.ide.util.TipDialog/0.23.1440.822@0.23.1440.822" timestamp="1586049100048" />
-    <state x="709" y="423" key="com.intellij.ide.util.TipDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1585787810167" />
-    <state x="435" y="262" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586233662984">
-      <screen x="0" y="0" width="1280" height="689" />
+    <state x="399" y="266" key="com.intellij.ide.util.TipDialog/0.23.1440.826@0.23.1440.826" timestamp="1586402497076" />
+    <state x="709" y="423" key="com.intellij.ide.util.TipDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1586597546528" />
+    <state x="869" y="539" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586597562715">
+      <screen x="0" y="23" width="2560" height="1359" />
     </state>
     <state x="435" y="262" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.689@0.0.1280.689" timestamp="1586233662984" />
     <state x="489" y="333" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.816@0.23.1440.816" timestamp="1585963455407" />
     <state x="489" y="335" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.823@0.23.1440.823" timestamp="1585797639869" />
     <state x="489" y="336" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.825@0.23.1440.825" timestamp="1585901562977" />
-    <state x="869" y="539" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.2560.1359@0.23.2560.1359" timestamp="1586087723547" />
-    <state x="1297" y="347" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1585807307924">
+    <state x="869" y="539" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.2560.1359@0.23.2560.1359" timestamp="1586597562715" />
+    <state x="888" y="380" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1586252722289">
       <screen x="0" y="23" width="2560" height="1359" />
     </state>
-    <state x="1297" y="347" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1585807307924" />
+    <state x="888" y="380" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1586252722289" />
     <state x="340" y="147" key="git4idea.merge.GitPullDialog" timestamp="1586233777595">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -313,5 +366,36 @@
     </state>
     <state x="324" y="123" width="672" height="566" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1586188475546" />
     <state x="365" y="170" width="670" height="676" key="search.everywhere.popup/0.23.1440.823@0.23.1440.823" timestamp="1585793451787" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Test/MineSweeper/BoomsSetUpTest.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MineSweeper$InputTest.ic" NAME="InputTest Coverage Results" MODIFIED="1586252035153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>MineSweeper.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MineSweeper$GameManager.ic" NAME="GameManager Coverage Results" MODIFIED="1586260376142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>MineSweeper.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MineSweeper$BoomsSetUpTest.ic" NAME="BoomsSetUpTest Coverage Results" MODIFIED="1586260672360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>MineSweeper.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MineSweeper$GameEventTest.ic" NAME="GameEventTest Coverage Results" MODIFIED="1586258913982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>MineSweeper.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MineSweeper$BoomsSetUpTest_BoomSetUpTest2.ic" NAME="BoomsSetUpTest.BoomSetUpTest2 Coverage Results" MODIFIED="1586251892095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>MineSweeper.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MineSweeper$MapGenerateTest.ic" NAME="MapGenerateTest Coverage Results" MODIFIED="1586262962297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>MineSweeper.*</FILTER>
+    </SUITE>
   </component>
 </project>

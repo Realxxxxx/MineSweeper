@@ -188,17 +188,23 @@ public class GameModel {
             y = grid.getY();
             // 挑选出备选进入加入队列的格子
             ArrayList<Grid> trackGridsList = new ArrayList<>();
-            if (x != 0)
+            if (x != 0) {
                 trackGridsList.add(grids[x - 1][y]);
-            if (y != 0)
+            }
+            if (y != 0) {
                 trackGridsList.add(grids[x][y - 1]);
-            if (x != bounds - 1)
+            }
+            if (x != bounds - 1) {
                 trackGridsList.add(grids[x + 1][y]);
-            if (y != bounds - 1)
+            }
+            if (y != bounds - 1) {
                 trackGridsList.add(grids[x][y + 1]);
+            }
             for (Grid trackGrid : trackGridsList) {
                 if (trackGrid.getType() != GridType.BOOM && !trackGrid.isSelected()) {
-                    gridQueue.add(trackGrid);
+                    if (trackGrid.getType() != GridType.DANGEROUS) {
+                        gridQueue.add(trackGrid);
+                    }
                     trackGrid.setSelected(true);
                 }
             }
