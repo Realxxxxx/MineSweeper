@@ -25,13 +25,14 @@ public class GameView {
         //没有翻开为 □ ，empty为■，BOOM为×，Flag为♠
         System.out.print(" ");
         // 输出头一行  个位数和十位数的打印不同
-        if (horizontalLength <= 8){
+        int blankSpace = 8;
+        if (horizontalLength <= blankSpace){
             for(int i=0; i < horizontalLength; i++){
                 System.out.print("| ");
                 System.out.print(i+1);
             }
         }else{
-            for(int i=0; i<=8; i++){
+            for(int i=0; i<=blankSpace; i++){
                 System.out.print("| ");
                 System.out.print(i+1);
             }
@@ -45,14 +46,14 @@ public class GameView {
         // 输出实际内容
         for(int y = 0; y < verticalLength; y++ ) {
             System.out.print(y + 1);
-            if (y < 9)
+            if (y <= blankSpace) {
                 System.out.print(" ");
-
+            }
             for (int x = 0; x < horizontalLength; x++) {
                 Grid griddraw = grids[x][y];
-                if (griddraw.isFlag()&& !griddraw.isSelected())
-//                    System.out.print(" ♠ ");
+                if (griddraw.isFlag()) {
                     System.out.print(" F ");
+                }
                 else if (!griddraw.isSelected())
                     System.out.print(" ■ ");
                 else if (griddraw.getType() == GridType.EMPTY)
@@ -79,9 +80,12 @@ public class GameView {
             while(true) {
                 if (scan.hasNextLine()) {
                     String str = scan.nextLine();
-                    str = str.trim(); // 去除前后空格
-                    str = str.replaceAll("，", ",");  // 顺便处理中文逗号
-                    String[] buff =  str.split("\\s+,|,\\s+|,|\\s+");// 根据逗号或者空格分隔
+                    str = str.trim();
+                    // 去除前后空格
+                    str = str.replaceAll("，", ",");
+                    // 顺便处理中文逗号
+                    String[] buff =  str.split("\\s+,|,\\s+|,|\\s+");
+                    // 根据逗号或者空格分隔
                     if (buff.length != 2) {
                         bb = new int[]{-2, -2};
                         System.out.println("输入参数数量不对");
@@ -122,12 +126,17 @@ public class GameView {
     	while(true) {
             if (scan.hasNextLine()) {
                 String str = scan.nextLine();
-                str = str.trim(); // 去除前后空格
-                str = str.replaceAll("，", ",");  // 顺便处理中文逗号
+                str = str.trim();
+                // 去除前后空格
+                str = str.replaceAll("，", ",");
+                // 顺便处理中文逗号
                 String[] buff = str.split("\\s+,|,\\s+|,|\\s+");
-                coordinate[0] = Integer.parseInt(buff[0]); // x
-                coordinate[1] = Integer.parseInt(buff[1]); // y
-                coordinate[2] = Integer.parseInt(buff[2]); // perform
+                coordinate[0] = Integer.parseInt(buff[0]);
+                // x
+                coordinate[1] = Integer.parseInt(buff[1]);
+                // y
+                coordinate[2] = Integer.parseInt(buff[2]);
+                // perform
             }
 
             if ((coordinate[2] != 1 && coordinate[2] != 2)) {
@@ -135,7 +144,7 @@ public class GameView {
                 System.out.println("请重新输入");
                 if(debug) {
                 	coordinate[2] = -1;
-                	
+
                 }
                 else
                 	continue;
