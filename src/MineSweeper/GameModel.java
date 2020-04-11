@@ -177,7 +177,7 @@ public class GameModel {
                 // 是炸弹就直接修改游戏状态
                 state = GameState.Fail;
                 grids[x][y].setSelected(true);
-                returnValue =  -3;
+                returnValue = -3;
             }
             // 3. 处理翻开的是Dangerours
             else if (grids[x][y].getType().equals(GridType.DANGEROUS)){
