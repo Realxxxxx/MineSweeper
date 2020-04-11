@@ -53,9 +53,8 @@ public class GameView {
                 if (griddraw.isFlag()&& !griddraw.isSelected())
 //                    System.out.print(" ♠ ");
                     System.out.print(" F ");
-                // debug
-//                else if (!griddraw.isSelected())
-//                    System.out.print(" ■ ");
+                else if (!griddraw.isSelected())
+                    System.out.print(" ■ ");
                 else if (griddraw.getType() == GridType.EMPTY)
                     System.out.print(" □ ");
                 else if (griddraw.getType() == GridType.BOOM)

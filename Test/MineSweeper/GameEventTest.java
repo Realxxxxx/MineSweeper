@@ -15,6 +15,9 @@ public class GameEventTest {
         // act as initGame
         controller.model.setBounds(2);
         controller.model.setGrids(grids);
+
+        this.controller.model.setBoomsAroundInMap(controller.model.bounds,
+                controller.model.grids);
     }
 
     private void makeUpTestGridSelected(){
@@ -46,6 +49,7 @@ public class GameEventTest {
         emptyGrid.setType(GridType.EMPTY);
         emptyGrid.setSelected(true);
         testGrid[1][1] = emptyGrid;
+
     }
 
     
@@ -74,6 +78,7 @@ public class GameEventTest {
         Grid emptyGrid = new Grid(1, 1);
         emptyGrid.setType(GridType.EMPTY);
         testGrid[1][1] = emptyGrid;
+
     }
 
     @Before

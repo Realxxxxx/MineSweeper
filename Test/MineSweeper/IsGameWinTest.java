@@ -22,62 +22,43 @@ public class IsGameWinTest {
 
     private void initGameForTest(int bounds, Grid[][] grids){
         // act as initGame
-        controller.model.setBounds(2);
+        controller.model.setBounds(3);
         controller.model.setGrids(grids);
+
+        this.controller.model.setBoomsAroundInMap(
+                controller.model.bounds,
+                controller.model.grids);
     }
 
-    private void makeUpTestGridSelected(){
-        /*
-           all grid are Selected!
-                1  2
-            1   B  D
-            2   D  E
-         */
-
-        testGrid = new Grid[2][2];
-
-        Grid boomGrid = new Grid(0, 0);
-        boomGrid.setType(GridType.BOOM);
-        boomGrid.setSelected(true);
-        testGrid[0][0] = boomGrid;
-
-        Grid dangerGrid1 = new Grid(0, 1);
-        dangerGrid1.setType(GridType.DANGEROUS);
-        dangerGrid1.setSelected(true);
-        testGrid[0][1] = dangerGrid1;
-
-        Grid dangerGrid2 = new Grid(1, 0);
-        dangerGrid2.setType(GridType.DANGEROUS);
-        dangerGrid1.setSelected(true);
-        testGrid[1][0] = dangerGrid2;
-
-        Grid emptyGrid = new Grid(1, 1);
-        emptyGrid.setType(GridType.EMPTY);
-        emptyGrid.setSelected(true);
-        testGrid[1][1] = emptyGrid;
-    }
-
-
-    private void makeUpTestGridUnselected(){
+    private void makeUpTestGrid(){
         /*
            all grid are not Selected
-                1  2
-            1   B  D
-            2   D  E
+                1  2  3
+            1   B  1  0
+            2   1  1  0
+            3   0  0  0
          */
 
-        testGrid = new Grid[2][2];
+        testGrid = new Grid[3][3];
+
+        for (int i=0; i<3;i++){
+            for (int j=0;j<3;j++){
+                Grid g = new Grid(i, j);
+                g.setType(GridType.EMPTY);
+                testGrid[i][j] = g;
+            }
+        }
 
         Grid boomGrid = new Grid(0, 0);
         boomGrid.setType(GridType.BOOM);
         testGrid[0][0] = boomGrid;
 
         Grid dangerGrid1 = new Grid(0, 1);
-        dangerGrid1.setType(GridType.DANGEROUS);
+        dangerGrid1.setType(GridType.EMPTY);
         testGrid[0][1] = dangerGrid1;
 
         Grid dangerGrid2 = new Grid(1, 0);
-        dangerGrid2.setType(GridType.DANGEROUS);
+        dangerGrid2.setType(GridType.EMPTY);
         testGrid[1][0] = dangerGrid2;
 
         Grid emptyGrid = new Grid(1, 1);
@@ -98,15 +79,36 @@ public class IsGameWinTest {
 
     @Test
     public void testGameWin() {
-        makeUpTestGridUnselected();
-        initGameForTest(2, testGrid);
+        /*
+        测试 3x3的地图中胜利的过程
+         */
+        makeUpTestGrid();
+        initGameForTest(3, testGrid);
 
         controller.model.markGridFlag(controller.model.grids, 0, 0);
+        controller.view.drawGame(controller.model.grids);
+        controller.model.isGameWin();
+        assertSame(GameState.InGame, controller.model.state);
+
         controller.model.filpGrid(controller.model.grids, 1, 0);
+        controller.view.drawGame(controller.model.grids);
+        controller.model.isGameWin();
+        assertSame(GameState.InGame, controller.model.state);
+
         controller.model.filpGrid(controller.model.grids, 0, 1);
+        controller.view.drawGame(controller.model.grids);
+        controller.model.isGameWin();
+        assertSame(GameState.InGame, controller.model.state);
+
         controller.model.filpGrid(controller.model.grids, 1, 1);
-        GameState expectedState = GameState.Win;
-        assertSame(expectedState, controller.model.state);
+        controller.view.drawGame(controller.model.grids);
+        controller.model.isGameWin();
+        assertSame(GameState.InGame, controller.model.state);
+
+        controller.model.filpGrid(controller.model.grids, 1, 2);
+        controller.view.drawGame(controller.model.grids);
+        controller.model.isGameWin();
+        assertSame(GameState.Win, controller.model.state);
 
     }
 
