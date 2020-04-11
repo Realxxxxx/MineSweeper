@@ -6,11 +6,14 @@ import java.util.Scanner;
 
 public class GameView {
     //根据grid的属性来绘制对应的格子
-	private boolean debug = true;
+	private boolean debug = false;
 
     // 用于控制输入
     private InputStream inStream = System.in;
 
+    public void turnToDebug(){
+        this.debug = true;
+    }
     // setter ; use for test
     public void setInStream(InputStream inStream) {
         this.inStream = inStream;
@@ -117,13 +120,13 @@ public class GameView {
 //        scan.close();
         return bb;
     }
-    
+
 
     public int[] inputCo(int bounds, Grid[][] grids) {
-    	int[] coordinate = new int[3];
-    	System.out.println("请输入选择的坐标与操作(1为揭开，2为插旗，如4,8,2表示坐标[4,8]处插旗)");
-    	Scanner scan = new Scanner(inStream);
-    	while(true) {
+        int[] coordinate = new int[3];
+        System.out.println("请输入选择的坐标与操作(1为揭开，2为插旗，如4,8,2表示坐标[4,8]处插旗)");
+        Scanner scan = new Scanner(inStream);
+        while(true) {
             if (scan.hasNextLine()) {
                 String str = scan.nextLine();
                 str = str.trim();
@@ -143,38 +146,29 @@ public class GameView {
                 System.out.println("操作参数只能为1和2");
                 System.out.println("请重新输入");
                 if(debug) {
-                	coordinate[2] = -1;
-
+                    coordinate[2] = -1;// 第三个值返回-1 代表操作参数出界
                 }
                 else
-                	continue;
-//                coordinate = new int[]{0, 0, -1}; // 第三个值返回-1 代表操作参数出界
-//                break;
+                    continue;
             }
-
-//            if (grids[coordinate[0]-1][coordinate[1]].isSelected()) {
-//                System.out.println("选中的格子已经打开");
-//                System.out.println("请重新输入");
-//                continue;
-////                coordinate = new int[]{coordinate[0], coordinate[1], -2}; // 第三个值返回-2 代表操作失败
-////                break;
-//            }
-            // 此处的coor[0] coor[1]   ->  x+1 y+1
             if (!(coordinate[0] <= bounds
-                    && coordinate[0] > 0
+                    && coordinate[0] >= 1
                     && coordinate[1] <= bounds
-                    && coordinate[1] > 0)) {
+                    && coordinate[1] >= 1)) {
                 System.out.println("输入坐标出界");
                 System.out.println("请重新输入");
                 if(debug) {
-                	coordinate[0] = -1;
-                	coordinate[1] = -1;
-                	
+                    coordinate[0] = -1;
+                    coordinate[1] = -1;
                 }
                 else
-                	continue;
-//                coordinate[2] = -3; // 第三个值返回-3 代表坐标出界
-//                break;
+                    continue;
+            }
+            // 此处的coor[0] coor[1]   ->  x+1 y+1
+            else if (grids[coordinate[0]-1][coordinate[1]-1].isSelected()) {
+                System.out.println("选中的格子已经打开");
+                System.out.println("请重新输入");
+                continue;
             }
             break;
         }

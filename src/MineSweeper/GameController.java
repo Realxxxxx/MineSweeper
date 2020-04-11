@@ -11,6 +11,10 @@ public class GameController {
         this.view = new GameView();
     }
 
+    public void turnToDebug(){
+        this.debug = true;
+        this.view.turnToDebug();
+    }
 
     public void start(){
 

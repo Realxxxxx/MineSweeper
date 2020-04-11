@@ -271,13 +271,15 @@ public class InputTest {
     @Test
     public void testInputCoInValid1() throws Exception{
         //坐标不合理
+
         makeUpTestGridUnselected();
         initGameForTest(2, testGrid);
+        this.controller.turnToDebug();
         String inputStr = "-2,-2,1";
         InputStream is = new ByteArrayInputStream(inputStr.getBytes());
         controller.view.setInStream(is);
         int[] coordinate = controller.view.inputCo(2, testGrid);
-        int[] expected = new int[]{-1,-1,1};
+        int[] expected = new int[]{-1,-1, 1};
         assertEquals(expected[0], coordinate[0], 0.001);
         assertEquals(expected[1], coordinate[1], 0.001);
         assertEquals(expected[2], coordinate[2], 0.001);
@@ -288,6 +290,7 @@ public class InputTest {
         //模式不合理
         makeUpTestGridUnselected();
         initGameForTest(2, testGrid);
+        this.controller.turnToDebug();
         String inputStr = "1,1,3";
         InputStream is = new ByteArrayInputStream(inputStr.getBytes());
         controller.view.setInStream(is);
@@ -303,6 +306,7 @@ public class InputTest {
         //模式，坐标不合理
         makeUpTestGridUnselected();
         initGameForTest(2, testGrid);
+        this.controller.turnToDebug();
         String inputStr = "-2,-2,3";
         InputStream is = new ByteArrayInputStream(inputStr.getBytes());
         controller.view.setInStream(is);
