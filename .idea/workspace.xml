@@ -91,22 +91,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameEventTest.testFilpFlag" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MineSweeper" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="MineSweeper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="MineSweeper" />
-      <option name="MAIN_CLASS_NAME" value="MineSweeper.GameEventTest" />
-      <option name="METHOD_NAME" value="testFilpFlag" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="GameEventTest.testFlipEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MineSweeper" />
       <extension name="coverage">
@@ -118,6 +102,22 @@
       <option name="PACKAGE_NAME" value="MineSweeper" />
       <option name="MAIN_CLASS_NAME" value="MineSweeper.GameEventTest" />
       <option name="METHOD_NAME" value="testFlipEmpty" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameEventTest.testFlipFlag" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MineSweeper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MineSweeper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="MineSweeper" />
+      <option name="MAIN_CLASS_NAME" value="MineSweeper.GameEventTest" />
+      <option name="METHOD_NAME" value="testFlipFlag" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -142,7 +142,7 @@
         <item itemvalue="JUnit.GameEventTest" />
         <item itemvalue="JUnit.MineSweeper in MineSweeper" />
         <item itemvalue="JUnit.GameEventTest.testFlipEmpty" />
-        <item itemvalue="JUnit.GameEventTest.testFilpFlag" />
+        <item itemvalue="JUnit.GameEventTest.testFlipFlag" />
         <item itemvalue="JUnit.GameEventTest.testFilpConnect" />
       </list>
     </recent_temporary>
@@ -171,7 +171,8 @@
       <workItem from="1586233584836" duration="278000" />
       <workItem from="1586233932946" duration="1111000" />
       <workItem from="1586252878858" duration="3413000" />
-      <workItem from="1586589222549" duration="10420000" />
+      <workItem from="1586589222549" duration="11555000" />
+      <workItem from="1586664095848" duration="130000" />
     </task>
     <task id="LOCAL-00001" summary="&lt;MOD&gt; filpGrid">
       <created>1586144472780</created>
@@ -208,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586603852131</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="&lt;ADD&gt; add 2 tests">
+      <created>1586604467126</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1586604467126</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,10 +260,10 @@
     </state>
     <state x="417" y="423" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.689@0.0.1280.689" timestamp="1586253246844" />
     <state x="834" y="858" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1586079849873" />
-    <state x="238" y="0" key="CommitChangelistDialog2" timestamp="1586603850433">
+    <state x="238" y="0" key="CommitChangelistDialog2" timestamp="1586604464907">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="238" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586603850433" />
+    <state x="238" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1586604464907" />
     <state x="267" y="23" key="CommitChangelistDialog2/0.23.1440.816@0.23.1440.816" timestamp="1585963470138" />
     <state x="267" y="23" key="CommitChangelistDialog2/0.23.1440.823@0.23.1440.823" timestamp="1585797665929" />
     <state x="475" y="23" key="CommitChangelistDialog2/0.23.2560.1359@0.23.2560.1359" timestamp="1586084249899" />
@@ -264,28 +272,28 @@
     </state>
     <state x="93" y="93" width="1095" height="504" key="DiffContextDialog/0.0.1280.689@0.0.1280.689" timestamp="1586600285002" />
     <state x="392" y="187" width="1200" height="1094" key="DiffContextDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1586250950095" />
-    <state width="1237" height="213" key="GridCell.Tab.0.bottom" timestamp="1586604455159">
+    <state width="1237" height="213" key="GridCell.Tab.0.bottom" timestamp="1586606567484">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="213" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1586604455159" />
+    <state width="1237" height="213" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1586606567484" />
     <state width="1358" height="197" key="GridCell.Tab.0.bottom/0.23.1440.821@0.23.1440.821" timestamp="1586051364408" />
     <state width="1358" height="286" key="GridCell.Tab.0.bottom/0.23.2560.1359@0.23.2560.1359" timestamp="1586251014686" />
-    <state width="1237" height="213" key="GridCell.Tab.0.center" timestamp="1586604455158">
+    <state width="1237" height="213" key="GridCell.Tab.0.center" timestamp="1586606567483">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="213" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1586604455158" />
+    <state width="1237" height="213" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1586606567483" />
     <state width="1358" height="197" key="GridCell.Tab.0.center/0.23.1440.821@0.23.1440.821" timestamp="1586051364407" />
     <state width="1358" height="286" key="GridCell.Tab.0.center/0.23.2560.1359@0.23.2560.1359" timestamp="1586251014685" />
-    <state width="1237" height="213" key="GridCell.Tab.0.left" timestamp="1586604455158">
+    <state width="1237" height="213" key="GridCell.Tab.0.left" timestamp="1586606567483">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="213" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1586604455158" />
+    <state width="1237" height="213" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1586606567483" />
     <state width="1358" height="197" key="GridCell.Tab.0.left/0.23.1440.821@0.23.1440.821" timestamp="1586051364407" />
     <state width="1358" height="286" key="GridCell.Tab.0.left/0.23.2560.1359@0.23.2560.1359" timestamp="1586251014685" />
-    <state width="1237" height="213" key="GridCell.Tab.0.right" timestamp="1586604455158">
+    <state width="1237" height="213" key="GridCell.Tab.0.right" timestamp="1586606567484">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="213" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1586604455158" />
+    <state width="1237" height="213" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1586606567484" />
     <state width="1358" height="197" key="GridCell.Tab.0.right/0.23.1440.821@0.23.1440.821" timestamp="1586051364407" />
     <state width="1358" height="286" key="GridCell.Tab.0.right/0.23.2560.1359@0.23.2560.1359" timestamp="1586251014685" />
     <state width="1358" height="298" key="GridCell.Tab.1.bottom" timestamp="1586084656282">
@@ -343,10 +351,10 @@
     <state x="399" y="263" key="com.intellij.ide.util.TipDialog/0.23.1440.816@0.23.1440.816" timestamp="1586005367860" />
     <state x="399" y="265" key="com.intellij.ide.util.TipDialog/0.23.1440.822@0.23.1440.822" timestamp="1586049100048" />
     <state x="709" y="423" key="com.intellij.ide.util.TipDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1585787810167" />
-    <state x="435" y="262" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586597835346">
+    <state x="435" y="262" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586664122135">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="435" y="262" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.689@0.0.1280.689" timestamp="1586597835346" />
+    <state x="435" y="262" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.689@0.0.1280.689" timestamp="1586664122135" />
     <state x="489" y="333" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.816@0.23.1440.816" timestamp="1585963455407" />
     <state x="489" y="335" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.823@0.23.1440.823" timestamp="1585797639869" />
     <state x="489" y="336" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.825@0.23.1440.825" timestamp="1585901562977" />

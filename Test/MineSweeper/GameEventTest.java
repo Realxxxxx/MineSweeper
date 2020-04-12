@@ -182,7 +182,7 @@ public class GameEventTest {
     }
 
     @Test
-    public void testFilpSelected(){
+    public void testFlipSelected(){
         makeUpTestGridSelected();
         initGameForTest(2, testGrid);
 
@@ -202,7 +202,7 @@ public class GameEventTest {
     }
 
     @Test
-    public void testFilpConnect(){
+    public void testFlipConnect(){
         makeUpTestGridConnect();
         initGameForTest(3, testGrid);
         this.controller.model.setBoomsAroundInMap(
@@ -218,7 +218,7 @@ public class GameEventTest {
     }
 
     @Test
-    public void testFilpFlag(){
+    public void testFlipFlag(){
         makeUpTestGridFlag();
         initGameForTest(1, testGrid);
 
