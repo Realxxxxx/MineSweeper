@@ -5,11 +5,11 @@ package MineSweeper;
  */
 public class Grid {
     private int x;
-    private int y;//格子的坐标
-    private int boomsAround ;//附近的额炸弹数
-    private boolean isSelected ;//是否被翻开
+    private int y;
+    private int boomsAround ;
+    private boolean isSelected ;
     private boolean isFlag;
-    private GridType type;//是空白格，被棋子插了，还是有炸弹，还是显示数字
+    private GridType type;
 
 
 

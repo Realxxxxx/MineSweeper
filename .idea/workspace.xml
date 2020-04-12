@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71f0a18d-4c8e-475a-a1a2-bbebd1745328" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/MineSweeper/IsGameWinTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/MineSweeper/IsGameWinTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/MineSweeper/MapGenerateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/MineSweeper/MapGenerateTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MineSweeper/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/Grid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,6 +179,7 @@
       <workItem from="1586597529076" duration="10010000" />
       <workItem from="1586669322659" duration="1042000" />
       <workItem from="1586683313352" duration="1464000" />
+      <workItem from="1586691201295" duration="98000" />
     </task>
     <task id="LOCAL-00001" summary="&lt;MOD&gt; filpGrid">
       <created>1586144472780</created>
@@ -235,11 +233,11 @@
     <state x="500" y="266" key="#com.intellij.ide.util.MemberChooser/0.23.1440.816@0.23.1440.816" timestamp="1585964045437" />
     <state x="500" y="228" key="#com.intellij.ide.util.MemberChooser/0.23.1440.823@0.23.1440.823" timestamp="1585793709438" />
     <state x="889" y="428" key="#com.intellij.ide.util.MemberChooser/0.23.2560.1359@0.23.2560.1359" timestamp="1585807129209" />
-    <state x="417" y="423" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1586683318142">
-      <screen x="0" y="0" width="1280" height="689" />
+    <state x="834" y="858" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1586691204263">
+      <screen x="0" y="23" width="2560" height="1359" />
     </state>
     <state x="417" y="423" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.689@0.0.1280.689" timestamp="1586683318142" />
-    <state x="834" y="858" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1586666894312" />
+    <state x="834" y="858" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1586691204263" />
     <state x="655" y="562" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1586620844930">
       <screen x="0" y="23" width="2560" height="1359" />
     </state>
@@ -396,6 +394,9 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MineSweeper$MineSweeper_in_MineSweeper.ic" NAME="MineSweeper in MineSweeper Coverage Results" MODIFIED="1586683722962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>MineSweeper.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/MineSweeper$InputTest.ic" NAME="InputTest Coverage Results" MODIFIED="1586252035153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>MineSweeper.*</FILTER>
     </SUITE>
@@ -405,16 +406,13 @@
     <SUITE FILE_PATH="coverage/MineSweeper$BoomsSetUpTest.ic" NAME="BoomsSetUpTest Coverage Results" MODIFIED="1586260672360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>MineSweeper.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/MineSweeper$GameEventTest.ic" NAME="GameEventTest Coverage Results" MODIFIED="1586258913982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>MineSweeper.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/MineSweeper$BoomsSetUpTest_BoomSetUpTest2.ic" NAME="BoomsSetUpTest.BoomSetUpTest2 Coverage Results" MODIFIED="1586251892095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>MineSweeper.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/MineSweeper$MineSweeper_in_MineSweeper.ic" NAME="MineSweeper in MineSweeper Coverage Results" MODIFIED="1586683722962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>MineSweeper.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/MineSweeper$MapGenerateTest.ic" NAME="MapGenerateTest Coverage Results" MODIFIED="1586262962297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>MineSweeper.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/MineSweeper$GameEventTest.ic" NAME="GameEventTest Coverage Results" MODIFIED="1586258913982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>MineSweeper.*</FILTER>
     </SUITE>
   </component>
