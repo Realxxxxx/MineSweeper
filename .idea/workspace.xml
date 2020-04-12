@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71f0a18d-4c8e-475a-a1a2-bbebd1745328" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/MineSweeper/IsGameWinTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/MineSweeper/IsGameWinTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/MineSweeper/BoomsSetUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/MineSweeper/BoomsSetUpTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/MineSweeper/MapGenerateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/MineSweeper/MapGenerateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/MineSweeper/SetBoomAroundNumTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/MineSweeper/SetBoomAroundNumTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +93,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoomsSetUpTest.BoomSetUpTest6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BoomsSetUpTest.boomSetUpTest6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MineSweeper" />
       <extension name="coverage">
         <pattern>
@@ -106,7 +103,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="MineSweeper" />
       <option name="MAIN_CLASS_NAME" value="MineSweeper.BoomsSetUpTest" />
-      <option name="METHOD_NAME" value="BoomSetUpTest6" />
+      <option name="METHOD_NAME" value="boomSetUpTest6" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -127,7 +124,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MapGenerateTest.EmptyMapGenTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MapGenerateTest.emptyMapGenTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MineSweeper" />
       <extension name="coverage">
         <pattern>
@@ -137,7 +134,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="MineSweeper" />
       <option name="MAIN_CLASS_NAME" value="MineSweeper.MapGenerateTest" />
-      <option name="METHOD_NAME" value="EmptyMapGenTest2" />
+      <option name="METHOD_NAME" value="emptyMapGenTest2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -146,8 +143,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.GameManager" />
-        <item itemvalue="JUnit.BoomsSetUpTest.BoomSetUpTest6" />
-        <item itemvalue="JUnit.MapGenerateTest.EmptyMapGenTest2" />
+        <item itemvalue="JUnit.BoomsSetUpTest.boomSetUpTest6" />
+        <item itemvalue="JUnit.MapGenerateTest.emptyMapGenTest2" />
         <item itemvalue="JUnit.MapGenerateTest" />
         <item itemvalue="JUnit.BoomsSetUpTest" />
       </list>
@@ -182,7 +179,7 @@
       <workItem from="1586259139886" duration="1086000" />
       <workItem from="1586260297385" duration="2652000" />
       <workItem from="1586402496661" duration="645000" />
-      <workItem from="1586597529076" duration="9007000" />
+      <workItem from="1586597529076" duration="9538000" />
     </task>
     <task id="LOCAL-00001" summary="&lt;MOD&gt; filpGrid">
       <created>1586144472780</created>

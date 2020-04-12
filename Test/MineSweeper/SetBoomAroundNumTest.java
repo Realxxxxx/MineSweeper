@@ -8,33 +8,33 @@ public class SetBoomAroundNumTest {
     private GameModel model;
     private Grid[][] grids;
     @Before
-    public void SetUp(){
+    public void setUp(){
         this.model = new GameModel();
         this.grids = model.generateEmptyMap(10);
         model.putBoomsInMap(10,1,grids);
     }
 
     @Test
-    public void Test1(){
+    public void test1(){
         int state = model.setBoomsAroundInMap(10,grids);
         Assert.assertEquals(0,state);
     }
 
     @Test
-    public void Test2(){
+    public void test2(){
         int state = model.setBoomsAroundInMap(-1,grids);
         Assert.assertEquals(-1,state);
 
     }
 
     @Test
-    public void Test3(){
+    public void test3(){
         int state = model.setBoomsAroundInMap(10,null);
         Assert.assertEquals(-1,state);
     }
 
     @Test
-    public void Test4(){
+    public void test4(){
         int state = model.setBoomsAroundInMap(11,grids);
         Assert.assertEquals(-1,state);
     }

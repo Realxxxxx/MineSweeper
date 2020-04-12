@@ -14,7 +14,7 @@ public class BoomsSetUpTest {
     }
 
     @Test
-    public void BoomSetUpTest1() {
+    public void boomSetUpTest1() {
 
         int state =this.model.putBoomsInMap(10,1,grids);
         int num = 0;
@@ -31,31 +31,31 @@ public class BoomsSetUpTest {
     }
 
     @Test
-    public void BoomSetUpTest2() {
+    public void boomSetUpTest2() {
         int state = this.model.putBoomsInMap(10,100,grids);
         Assert.assertEquals(-1,state);
     }
 
     @Test
-    public void BoomSetUpTest3() {
+    public void boomSetUpTest3() {
         int state = this.model.putBoomsInMap(10,-1,grids);
         Assert.assertEquals(-1,state);
     }
 
     @Test
-    public void BoomSetUpTest4() {
+    public void boomSetUpTest4() {
         int state = this.model.putBoomsInMap(-1,10,grids);
         Assert.assertEquals(-1,state);
     }
 
     @Test
-    public void BoomSetUpTest5() {
+    public void boomSetUpTest5() {
         int state = this.model.putBoomsInMap(10,1,null);
         Assert.assertEquals(-1,state);
     }
 
     @Test
-    public void BoomSetUpTest6() {
+    public void boomSetUpTest6() {
         int state = this.model.putBoomsInMap(11,1,grids);
         Assert.assertEquals(-1,state);
     }

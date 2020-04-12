@@ -9,12 +9,12 @@ public class MapGenerateTest {
     private GameModel model;
 
     @Before
-    public void SetUp(){
+    public void setUp(){
         this.model = new GameModel();
     }
 
     @Test
-    public void EmptyMapGenTest1(){
+    public void emptyMapGenTest1(){
         Grid[][] grids = model.generateEmptyMap(10);
         for (int i = 0; i < grids.length; i++) {
             for (int j = 0; j < grids.length; j++) {
@@ -24,13 +24,13 @@ public class MapGenerateTest {
     }
 
     @Test
-    public void EmptyMapGenTest2(){
+    public void emptyMapGenTest2(){
         Grid[][] grids = model.generateEmptyMap(-1);
         Assert.assertNull(grids);
     }
 
     @Test
-    public void RandomlyMapGenTest(){
+    public void randomlyMapGenTest(){
         Grid[][] gTest =  model.generateMap(8, 10);
         Assert.assertEquals(8, gTest.length, 0.01);
         int boomCount = 0;
