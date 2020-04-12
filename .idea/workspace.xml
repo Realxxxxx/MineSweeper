@@ -4,9 +4,7 @@
     <option name="GROUP_BY_SEVERITY" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71f0a18d-4c8e-475a-a1a2-bbebd1745328" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Test/MineSweeper/SetBoomAroundNumTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/MineSweeper/SetBoomAroundNumTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="71f0a18d-4c8e-475a-a1a2-bbebd1745328" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -177,7 +175,7 @@
       <workItem from="1586260297385" duration="2652000" />
       <workItem from="1586402496661" duration="645000" />
       <workItem from="1586597529076" duration="10010000" />
-      <workItem from="1586669322659" duration="810000" />
+      <workItem from="1586669322659" duration="1042000" />
     </task>
     <task id="LOCAL-00001" summary="&lt;MOD&gt; filpGrid">
       <created>1586144472780</created>

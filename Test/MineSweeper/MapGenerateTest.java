@@ -14,7 +14,7 @@ public class MapGenerateTest {
     }
 
     @Test
-    public void emptyMapGenTest1(){
+    public void testEmptyMapGen1(){
         Grid[][] grids = model.generateEmptyMap(10);
         for (int i = 0; i < grids.length; i++) {
             for (int j = 0; j < grids.length; j++) {
@@ -24,13 +24,13 @@ public class MapGenerateTest {
     }
 
     @Test
-    public void emptyMapGenTest2(){
+    public void testEmptyMapGen2(){
         Grid[][] grids = model.generateEmptyMap(-1);
         Assert.assertNull(grids);
     }
 
     @Test
-    public void randomlyMapGenTest(){
+    public void testRandomlyMapGen(){
         Grid[][] gTest =  model.generateMap(8, 10);
         Assert.assertEquals(8, gTest.length, 0.01);
         int boomCount = 0;

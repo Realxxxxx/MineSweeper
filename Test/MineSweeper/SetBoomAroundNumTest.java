@@ -15,26 +15,26 @@ public class SetBoomAroundNumTest {
     }
 
     @Test
-    public void setNumTest1(){
+    public void TestSetNum1(){
         int state = model.setBoomsAroundInMap(10,grids);
         Assert.assertEquals(0,state);
     }
 
     @Test
-    public void setNumTest2(){
+    public void TestSetNum2(){
         int state = model.setBoomsAroundInMap(-1,grids);
         Assert.assertEquals(-1,state);
 
     }
 
     @Test
-    public void setNumTest3(){
+    public void TestSetNum3(){
         int state = model.setBoomsAroundInMap(10,null);
         Assert.assertEquals(-1,state);
     }
 
     @Test
-    public void setNumTest4(){
+    public void TestSetNum4(){
         int state = model.setBoomsAroundInMap(11,grids);
         Assert.assertEquals(-1,state);
     }
