@@ -225,7 +225,7 @@ public class InputTest {
     
     @Test
     public void testInputCoValid1() throws Exception{
-        // 正常输入
+        // 正常输入(边界测试1) 1,1,1
         makeUpTestGridUnselected();
         initGameForTest(2, testGrid);
         String inputStr = "1,1,1";
@@ -240,7 +240,7 @@ public class InputTest {
     
     @Test
     public void testInputCoValid2() throws Exception{
-        // 正常输入
+        // 正常输入(等价类) 1,1,2
         makeUpTestGridUnselected();
         initGameForTest(2, testGrid);
         String inputStr = "1,1,2";
@@ -255,7 +255,22 @@ public class InputTest {
     
     @Test
     public void testInputCoValid3() throws Exception{
-        // 正常输入
+        // 正常输入(边界测试3) 1,2,1
+        makeUpTestGridUnselected();
+        initGameForTest(2, testGrid);
+        String inputStr = "1,2,1";
+        InputStream is = new ByteArrayInputStream(inputStr.getBytes());
+        controller.view.setInStream(is);
+        int[] coordinate = controller.view.inputCo(2, testGrid);
+        int[] expected = new int[]{1,2,1};
+        assertEquals(expected[0], coordinate[0], 0.001);
+        assertEquals(expected[1], coordinate[1], 0.001);
+        assertEquals(expected[2], coordinate[2], 0.001);
+    }
+    
+    @Test
+    public void testInputCoValid4() throws Exception{
+        // 正常输入(边界测试4) 2,2,1
         makeUpTestGridUnselected();
         initGameForTest(2, testGrid);
         String inputStr = "2,2,1";
@@ -269,9 +284,23 @@ public class InputTest {
     }
     
     @Test
+    public void testInputCoValid5() throws Exception{
+        // 正常输入(边界测试4) 2,1,1
+        makeUpTestGridUnselected();
+        initGameForTest(2, testGrid);
+        String inputStr = "2,1,1";
+        InputStream is = new ByteArrayInputStream(inputStr.getBytes());
+        controller.view.setInStream(is);
+        int[] coordinate = controller.view.inputCo(2, testGrid);
+        int[] expected = new int[]{2,1,1};
+        assertEquals(expected[0], coordinate[0], 0.001);
+        assertEquals(expected[1], coordinate[1], 0.001);
+        assertEquals(expected[2], coordinate[2], 0.001);
+    }
+    
+    @Test
     public void testInputCoInValid1() throws Exception{
         //坐标不合理
-
         makeUpTestGridUnselected();
         initGameForTest(2, testGrid);
         this.controller.turnToDebug();
@@ -279,7 +308,7 @@ public class InputTest {
         InputStream is = new ByteArrayInputStream(inputStr.getBytes());
         controller.view.setInStream(is);
         int[] coordinate = controller.view.inputCo(2, testGrid);
-        int[] expected = new int[]{-1,-1, 1};
+        int[] expected = new int[]{-1, -2, 1};
         assertEquals(expected[0], coordinate[0], 0.001);
         assertEquals(expected[1], coordinate[1], 0.001);
         assertEquals(expected[2], coordinate[2], 0.001);
@@ -301,9 +330,26 @@ public class InputTest {
         assertEquals(expected[2], coordinate[2], 0.001);
     }
     
+    
     @Test
     public void testInputCoInValid3() throws Exception{
-        //模式，坐标不合理
+        //坐标，模式合理时，格子不合理
+        makeUpTestGridSelected();
+        initGameForTest(2, testGrid);
+        this.controller.turnToDebug();
+        String inputStr = "1,1,1";
+        InputStream is = new ByteArrayInputStream(inputStr.getBytes());
+        controller.view.setInStream(is);
+        int[] coordinate = controller.view.inputCo(2, testGrid);
+        int[] expected = new int[]{1,-1,1};
+        assertEquals(expected[0], coordinate[0], 0.001);
+        assertEquals(expected[1], coordinate[1], 0.001);
+        assertEquals(expected[2], coordinate[2], 0.001);
+    }
+    
+    @Test
+    public void testInputCoInValid4() throws Exception{
+        //模式，坐标不合理（坐标不合理情况下不测格子是否合理，无意义）
         makeUpTestGridUnselected();
         initGameForTest(2, testGrid);
         this.controller.turnToDebug();
@@ -311,12 +357,41 @@ public class InputTest {
         InputStream is = new ByteArrayInputStream(inputStr.getBytes());
         controller.view.setInStream(is);
         int[] coordinate = controller.view.inputCo(2, testGrid);
-        int[] expected = new int[]{-1,-1,-1};
+        int[] expected = new int[]{-1,-2,-1};
+        assertEquals(expected[0], coordinate[0], 0.001);
+        assertEquals(expected[1], coordinate[1], 0.001);
+        assertEquals(expected[2], coordinate[2], 0.001);
+    }
+
+    @Test
+    public void testInputCoInValid5() throws Exception{
+        //模式，格子不合理，坐标合理
+        makeUpTestGridSelected();
+        initGameForTest(2, testGrid);
+        this.controller.turnToDebug();
+        String inputStr = "1,1,3";
+        InputStream is = new ByteArrayInputStream(inputStr.getBytes());
+        controller.view.setInStream(is);
+        int[] coordinate = controller.view.inputCo(2, testGrid);
+        int[] expected = new int[]{1,-1,-1};
         assertEquals(expected[0], coordinate[0], 0.001);
         assertEquals(expected[1], coordinate[1], 0.001);
         assertEquals(expected[2], coordinate[2], 0.001);
     }
     
-
-
+    @Test
+    public void testInputCoInValidFormat() throws Exception{
+        //输入参数个数不对
+        makeUpTestGridUnselected();
+        initGameForTest(2, testGrid);
+        this.controller.turnToDebug();
+        String inputStr = "-2,-2";
+        InputStream is = new ByteArrayInputStream(inputStr.getBytes());
+        controller.view.setInStream(is);
+        int[] coordinate = controller.view.inputCo(2, testGrid);
+        int[] expected = new int[]{-2,-2,-2};
+        assertEquals(expected[0], coordinate[0], 0.001);
+        assertEquals(expected[1], coordinate[1], 0.001);
+        assertEquals(expected[2], coordinate[2], 0.001);
+    }
 }

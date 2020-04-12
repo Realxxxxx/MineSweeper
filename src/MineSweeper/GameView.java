@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class GameView {
     //根据grid的属性来绘制对应的格子
-	private boolean debug = false;
+	private boolean debug;
 
     // 用于控制输入
     private InputStream inStream = System.in;
@@ -134,6 +134,16 @@ public class GameView {
                 str = str.replaceAll("，", ",");
                 // 顺便处理中文逗号
                 String[] buff = str.split("\\s+,|,\\s+|,|\\s+");
+                if (buff.length != 3) {
+                    System.out.println("输入参数数量不对"+buff.length);
+                    if(debug) {
+                    	coordinate = new int[]{-2,-2,-2};
+                    	break;
+                    }
+                    else 
+                    	continue;
+                }
+                
                 coordinate[0] = Integer.parseInt(buff[0]);
                 // x
                 coordinate[1] = Integer.parseInt(buff[1]);
@@ -141,6 +151,7 @@ public class GameView {
                 coordinate[2] = Integer.parseInt(buff[2]);
                 // perform
             }
+            
 
             if ((coordinate[2] != 1 && coordinate[2] != 2)) {
                 System.out.println("操作参数只能为1和2");
@@ -159,7 +170,7 @@ public class GameView {
                 System.out.println("请重新输入");
                 if(debug) {
                     coordinate[0] = -1;
-                    coordinate[1] = -1;
+                    //coordinate[1] = -1;
                 }
                 else
                     continue;
@@ -168,7 +179,11 @@ public class GameView {
             else if (grids[coordinate[0]-1][coordinate[1]-1].isSelected()) {
                 System.out.println("选中的格子已经打开");
                 System.out.println("请重新输入");
-                continue;
+                if(debug) {
+                	coordinate[1] = -1;
+                }
+                else
+                	continue;
             }
             break;
         }
