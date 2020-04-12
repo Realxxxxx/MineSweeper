@@ -43,5 +43,4 @@ public class MapGenerateTest {
         Assert.assertEquals(10, boomCount, 0.01);
     }
 
-
 }

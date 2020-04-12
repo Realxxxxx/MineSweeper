@@ -1,10 +1,5 @@
 package MineSweeper;
 
-//import org.jboss.arquillian.container.test.api.Deployment;
-//import org.jboss.arquillian.junit.Arquillian;
-//import org.jboss.shrinkwrap.api.ShrinkWrap;
-//import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-//import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,6 +15,8 @@ public class IsGameWinTest {
         // act as initGame
         controller.model.setBounds(3);
         controller.model.setGrids(grids);
+
+        this.controller.view.turnToDebug();
 
         this.controller.model.setBoomsAroundInMap(
                 controller.model.bounds,
@@ -82,27 +79,22 @@ public class IsGameWinTest {
         initGameForTest(3, testGrid);
 
         controller.model.markGridFlag(controller.model.grids, 0, 0);
-        controller.view.drawGame(controller.model.grids);
         controller.model.isGameWin();
         assertSame(GameState.InGame, controller.model.state);
 
         controller.model.filpGrid(controller.model.grids, 1, 0);
-        controller.view.drawGame(controller.model.grids);
         controller.model.isGameWin();
         assertSame(GameState.InGame, controller.model.state);
 
         controller.model.filpGrid(controller.model.grids, 0, 1);
-        controller.view.drawGame(controller.model.grids);
         controller.model.isGameWin();
         assertSame(GameState.InGame, controller.model.state);
 
         controller.model.filpGrid(controller.model.grids, 1, 1);
-        controller.view.drawGame(controller.model.grids);
         controller.model.isGameWin();
         assertSame(GameState.InGame, controller.model.state);
 
         controller.model.filpGrid(controller.model.grids, 1, 2);
-        controller.view.drawGame(controller.model.grids);
         controller.model.isGameWin();
         assertSame(GameState.Win, controller.model.state);
 

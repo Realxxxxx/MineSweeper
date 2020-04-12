@@ -182,6 +182,11 @@ public class GameModel {
             grids[x][y].setSelected(true);
             return -3;
         }
+        if (grids[x][y].getType() == GridType.DANGEROUS)
+        {
+            grids[x][y].setSelected(true);
+            return 1;
+        }
         //3. 处理未触雷
         //规则：上下左右的牌，1.已翻开的不加入队列 2.炸弹不加入队列 3.数字不加入队列 但是要翻开 4.旗子不加入队列
         while (!gridQueue.isEmpty()) {
