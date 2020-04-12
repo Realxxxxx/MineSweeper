@@ -10,8 +10,8 @@ public class SetBoomAroundNumTest {
     @Before
     public void SetUp(){
         this.model = new GameModel();
-        this.grids = model.GenerateEmptyMap(10);
-        model.PutBoomsInMap(10,1,grids);
+        this.grids = model.generateEmptyMap(10);
+        model.putBoomsInMap(10,1,grids);
     }
 
     @Test
@@ -35,7 +35,7 @@ public class SetBoomAroundNumTest {
 
     @Test
     public void Test4(){
-        int state = model.setBoomsAroundInMap(11,null);
+        int state = model.setBoomsAroundInMap(11,grids);
         Assert.assertEquals(-1,state);
     }
 

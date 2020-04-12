@@ -1,6 +1,8 @@
 package MineSweeper;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Vector;
 import java.util.Random;
 
@@ -28,10 +30,11 @@ public class GameModel {
 
     // 独立出来以供测试
     public Grid[][] generateMap(int bounds, int numOfBooms){
-        Grid[][] grids = GenerateEmptyMap(bounds);
-        PutBoomsInMap(bounds, numOfBooms, grids);
+        Grid[][] grids = generateEmptyMap(bounds);
+        putBoomsInMap(bounds, numOfBooms, grids);
         setBoomsAroundInMap(bounds, grids);
         return grids;
+
     }
 
     public int setBoomsAroundInMap(int bounds, Grid[][] grids) {
@@ -43,12 +46,10 @@ public class GameModel {
                 for (int j = 0; j < bounds; j++) {
                     if (grids[i][j].getType() == GridType.EMPTY) {
                         if (i > 0) {
-                            // 寻找左一格
                             if (grids[i - 1][j].getType() == GridType.BOOM) {
                                 grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
                             }
                         }
-                        // 寻找右一格
                         if (i > 0 && j < bounds - 1) {
                             if (grids[i - 1][j + 1].getType() == GridType.BOOM) {
                                 grids[i][j].setBoomsAround(grids[i][j].getBoomsAround() + 1);
@@ -97,7 +98,7 @@ public class GameModel {
 
     }
 
-    public int PutBoomsInMap(int bounds, int numOfBooms, Grid[][] grids) {
+    public int putBoomsInMap(int bounds, int numOfBooms, Grid[][] grids) {
         try {
             if (numOfBooms<=0 || numOfBooms>=bounds*bounds || bounds>grids.length){
                 return -1;
@@ -124,7 +125,7 @@ public class GameModel {
 
     }
 
-    public Grid[][] GenerateEmptyMap(int bounds) {
+    public Grid[][] generateEmptyMap(int bounds) {
         try {
             Grid[][] grids = new Grid[bounds][bounds];
             for (int i = 0; i < bounds; i++) {
@@ -142,6 +143,7 @@ public class GameModel {
 
     //初始化盘大小，地雷数目，grids
     public Grid[][] initGame(int bounds, int numOfBooms){
+
         this.bounds = bounds;
         // 生成地图
         this.grids = generateMap(bounds, numOfBooms);
@@ -150,77 +152,69 @@ public class GameModel {
 
     //翻开gird之后的操作
     public int filpGrid(Grid[][] grids, int x, int y){
+        // return number
         /*
-            return number
             -1 filp flag
             -2 flip Selected
             -3 flip Boom
             1  flip Successfully
          */
-        int returnValue;
+
         if(grids[x][y].isFlag()){
             System.out.println("🚩不能被翻开");
-            returnValue =  -1;
+            return -1;
         }
-        else if(grids[x][y].isSelected()){
+        if(grids[x][y].isSelected()){
             System.out.println("该格已经被翻开");
-            returnValue = -2;
+            return -2;
         }
-        else {
-            Vector<Grid> gridQueue = new Vector<>();
-            gridQueue.add(grids[x][y]);
-            // 1. 选中的格子翻开
+        Vector<Grid> gridQueue = new Vector<>();
+        gridQueue.add(grids[x][y]);
+        // 1. 选中的格子翻开
+        grids[x][y].setSelected(true);
+        // 2. 检测翻开的格子是不是炸弹
+        if (isBooming(grids, x, y))
+        {
+            // 是炸弹就直接修改游戏状态
+            state = GameState.Fail;
             grids[x][y].setSelected(true);
-            // 2. 处理翻开的格子是不是炸弹
-            if (isBooming(grids, x, y))
-            {
-                // 是炸弹就直接修改游戏状态
-                state = GameState.Fail;
-                grids[x][y].setSelected(true);
-                returnValue = -3;
+            return -3;
+        }
+        //3. 处理未触雷
+        //规则：上下左右的牌，1.已翻开的不加入队列 2.炸弹不加入队列 3.数字不加入队列 但是要翻开 4.旗子不加入队列
+        while (!gridQueue.isEmpty()) {
+            Grid grid = gridQueue.remove(0);
+            x = grid.getX();
+            y = grid.getY();
+            // 挑选出备选进入加入队列的格子
+            ArrayList<Grid> trackGridsList = new ArrayList<>();
+            if (x != 0) {
+                trackGridsList.add(grids[x - 1][y]);
             }
-            // 3. 处理翻开的是Dangerours
-            else if (grids[x][y].getType().equals(GridType.DANGEROUS)){
-                returnValue = 1;
+            if (y != 0) {
+                trackGridsList.add(grids[x][y - 1]);
             }
-            // 4. 处理空格子
-            else {
-                returnValue = 1;
-                //规则：上下左右的牌，1.已翻开的不加入队列 2.炸弹/危险不加入队列 3.数字不加入队列 但是要翻开 4.旗子不加入队列
-                while (!gridQueue.isEmpty()) {
-                    Grid grid = gridQueue.remove(0);
-                    x = grid.getX();
-                    y = grid.getY();
-                    // 挑选出备选进入加入队列的格子
-                    ArrayList<Grid> trackGridsList = new ArrayList<>();
-                    if (x != 0)
-                        trackGridsList.add(grids[x - 1][y]);
-                    if (y != 0)
-                        trackGridsList.add(grids[x][y - 1]);
-                    if (x != bounds - 1)
-                        trackGridsList.add(grids[x + 1][y]);
-                    if (y != bounds - 1)
-                        trackGridsList.add(grids[x][y + 1]);
-                    for (Grid trackGrid : trackGridsList) {
-                        if (trackGrid.getType() != GridType.BOOM
-                                && trackGrid.getType() != GridType.DANGEROUS
-                                && !trackGrid.isSelected()) {
-                            gridQueue.add(trackGrid);
-                            trackGrid.setSelected(true);
-                        }
+            if (x != bounds - 1) {
+                trackGridsList.add(grids[x + 1][y]);
+            }
+            if (y != bounds - 1) {
+                trackGridsList.add(grids[x][y + 1]);
+            }
+            for (Grid trackGrid : trackGridsList) {
+                if (trackGrid.getType() != GridType.BOOM && !trackGrid.isSelected()) {
+                    if (trackGrid.getType() != GridType.DANGEROUS) {
+                        gridQueue.add(trackGrid);
                     }
+                    trackGrid.setSelected(true);
                 }
             }
         }
-        return returnValue;
+        return 1;
     }
 
     public void isGameWin(){
         // 游戏已经失败则直接返回
         if (this.state == GameState.Fail){
-            return;
-        }
-        if (this.state == GameState.Win){
             return;
         }
         // 判断游戏是否胜利
@@ -246,6 +240,30 @@ public class GameModel {
         if (grids[x][y].getType() == GridType.BOOM && grids[x][y].isSelected())
             return true;
         return false;
+    }
+
+    //判断胜利  见函数isGameWin和isBooming 想把该函数拆分为 检测触雷+检测胜利
+    // 把判断游戏胜利的逻辑 提出到Controller里进行判断
+    public int isWin(Grid[][] grids, int x, int y){
+
+        if (grids[x][y].getType() == GridType.BOOM && grids[x][y].isSelected()){
+            return -1;
+        }
+        int flag = 0;
+        for (int i = 0; i < grids.length; i++) {
+            for (int j = 0; j < grids.length; j++) {
+                if (grids[i][j].isSelected()==false && grids[i][j].getType()!=GridType.BOOM){
+                    flag = 1;
+                    break;
+                }
+            }
+        }
+        if (flag == 0){
+            return 1;
+        }
+        this.grids = grids;
+
+        return 0;
     }
 
     // 插旗操作

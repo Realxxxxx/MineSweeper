@@ -15,7 +15,7 @@ public class MapGenerateTest {
 
     @Test
     public void EmptyMapGenTest1(){
-        Grid[][] grids = model.GenerateEmptyMap(10);
+        Grid[][] grids = model.generateEmptyMap(10);
         for (int i = 0; i < grids.length; i++) {
             for (int j = 0; j < grids.length; j++) {
                 Assert.assertEquals(GridType.EMPTY,grids[i][j].getType());
@@ -25,7 +25,7 @@ public class MapGenerateTest {
 
     @Test
     public void EmptyMapGenTest2(){
-        Grid[][] grids = model.GenerateEmptyMap(-1);
+        Grid[][] grids = model.generateEmptyMap(-1);
         Assert.assertNull(grids);
     }
 
