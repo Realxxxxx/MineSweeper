@@ -34,7 +34,7 @@ public class SetBoomAroundNumTest {
     }
 
     @Test
-    public void setNumTest3(){
+    public void setNumTest4(){
         int state = model.setBoomsAroundInMap(11,grids);
         Assert.assertEquals(-1,state);
     }
