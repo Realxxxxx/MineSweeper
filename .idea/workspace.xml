@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71f0a18d-4c8e-475a-a1a2-bbebd1745328" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/MineSweeper/BoomsSetUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/MineSweeper/BoomsSetUpTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/MineSweeper/MapGenerateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/MineSweeper/MapGenerateTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/MineSweeper/SetBoomAroundNumTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/MineSweeper/SetBoomAroundNumTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/MineSweeper/IsGameWinTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/MineSweeper/IsGameWinTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MineSweeper/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MineSweeper/GameView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +67,7 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="JUnit.BoomsSetUpTest.BoomSetUpTest6">
+  <component name="RunManager" selected="Application.GameManager">
     <configuration name="GameManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MineSweeper.GameManager" />
       <module name="MineSweeper" />
@@ -143,9 +145,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GameManager" />
         <item itemvalue="JUnit.BoomsSetUpTest.BoomSetUpTest6" />
         <item itemvalue="JUnit.MapGenerateTest.EmptyMapGenTest2" />
-        <item itemvalue="Application.GameManager" />
         <item itemvalue="JUnit.MapGenerateTest" />
         <item itemvalue="JUnit.BoomsSetUpTest" />
       </list>
@@ -180,7 +182,7 @@
       <workItem from="1586259139886" duration="1086000" />
       <workItem from="1586260297385" duration="2652000" />
       <workItem from="1586402496661" duration="645000" />
-      <workItem from="1586597529076" duration="8360000" />
+      <workItem from="1586597529076" duration="9007000" />
     </task>
     <task id="LOCAL-00001" summary="&lt;MOD&gt; filpGrid">
       <created>1586144472780</created>
@@ -234,10 +236,10 @@
     <state x="500" y="266" key="#com.intellij.ide.util.MemberChooser/0.23.1440.816@0.23.1440.816" timestamp="1585964045437" />
     <state x="500" y="228" key="#com.intellij.ide.util.MemberChooser/0.23.1440.823@0.23.1440.823" timestamp="1585793709438" />
     <state x="889" y="428" key="#com.intellij.ide.util.MemberChooser/0.23.2560.1359@0.23.2560.1359" timestamp="1585807129209" />
-    <state x="834" y="858" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1586079849873">
+    <state x="834" y="858" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1586666894312">
       <screen x="0" y="23" width="2560" height="1359" />
     </state>
-    <state x="834" y="858" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1586079849873" />
+    <state x="834" y="858" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1586666894312" />
     <state x="655" y="562" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1586620844930">
       <screen x="0" y="23" width="2560" height="1359" />
     </state>
@@ -254,34 +256,34 @@
     </state>
     <state x="93" y="93" width="1095" height="504" key="DiffContextDialog/0.0.1280.689@0.0.1280.689" timestamp="1586233569939" />
     <state x="392" y="187" width="1200" height="1094" key="DiffContextDialog/0.23.2560.1359@0.23.2560.1359" timestamp="1586250950095" />
-    <state width="1689" height="381" key="GridCell.Tab.0.bottom" timestamp="1586621658239">
+    <state width="1689" height="381" key="GridCell.Tab.0.bottom" timestamp="1586667055085">
       <screen x="0" y="23" width="2560" height="1359" />
     </state>
     <state width="1237" height="213" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1586189625772" />
     <state width="1358" height="197" key="GridCell.Tab.0.bottom/0.23.1440.821@0.23.1440.821" timestamp="1586051364408" />
     <state width="1358" height="675" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1586265348175" />
-    <state width="1689" height="381" key="GridCell.Tab.0.bottom/0.23.2560.1359@0.23.2560.1359" timestamp="1586621658239" />
-    <state width="1689" height="381" key="GridCell.Tab.0.center" timestamp="1586621658239">
+    <state width="1689" height="381" key="GridCell.Tab.0.bottom/0.23.2560.1359@0.23.2560.1359" timestamp="1586667055085" />
+    <state width="1689" height="381" key="GridCell.Tab.0.center" timestamp="1586667055084">
       <screen x="0" y="23" width="2560" height="1359" />
     </state>
     <state width="1237" height="213" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1586189625772" />
     <state width="1358" height="197" key="GridCell.Tab.0.center/0.23.1440.821@0.23.1440.821" timestamp="1586051364407" />
     <state width="1358" height="675" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1586265348175" />
-    <state width="1689" height="381" key="GridCell.Tab.0.center/0.23.2560.1359@0.23.2560.1359" timestamp="1586621658239" />
-    <state width="1689" height="381" key="GridCell.Tab.0.left" timestamp="1586621658238">
+    <state width="1689" height="381" key="GridCell.Tab.0.center/0.23.2560.1359@0.23.2560.1359" timestamp="1586667055084" />
+    <state width="1689" height="381" key="GridCell.Tab.0.left" timestamp="1586667055083">
       <screen x="0" y="23" width="2560" height="1359" />
     </state>
     <state width="1237" height="213" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1586189625771" />
     <state width="1358" height="197" key="GridCell.Tab.0.left/0.23.1440.821@0.23.1440.821" timestamp="1586051364407" />
     <state width="1358" height="675" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1586265348174" />
-    <state width="1689" height="381" key="GridCell.Tab.0.left/0.23.2560.1359@0.23.2560.1359" timestamp="1586621658238" />
-    <state width="1689" height="381" key="GridCell.Tab.0.right" timestamp="1586621658239">
+    <state width="1689" height="381" key="GridCell.Tab.0.left/0.23.2560.1359@0.23.2560.1359" timestamp="1586667055083" />
+    <state width="1689" height="381" key="GridCell.Tab.0.right" timestamp="1586667055085">
       <screen x="0" y="23" width="2560" height="1359" />
     </state>
     <state width="1237" height="213" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1586189625772" />
     <state width="1358" height="197" key="GridCell.Tab.0.right/0.23.1440.821@0.23.1440.821" timestamp="1586051364407" />
     <state width="1358" height="675" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1586265348175" />
-    <state width="1689" height="381" key="GridCell.Tab.0.right/0.23.2560.1359@0.23.2560.1359" timestamp="1586621658239" />
+    <state width="1689" height="381" key="GridCell.Tab.0.right/0.23.2560.1359@0.23.2560.1359" timestamp="1586667055085" />
     <state width="1358" height="451" key="GridCell.Tab.1.bottom" timestamp="1586265348169">
       <screen x="0" y="23" width="1440" height="826" />
     </state>

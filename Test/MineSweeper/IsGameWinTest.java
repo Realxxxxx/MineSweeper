@@ -8,10 +8,6 @@ package MineSweeper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 
 import static org.junit.Assert.*;
 

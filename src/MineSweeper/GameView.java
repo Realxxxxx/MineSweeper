@@ -1,11 +1,13 @@
 package MineSweeper;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
 
+/**
+ * @author Zhao,Yang,Shen
+ */
 public class GameView {
-    //根据grid的属性来绘制对应的格子
+
 	private boolean debug;
 
     // 用于控制输入
@@ -14,15 +16,16 @@ public class GameView {
     public void turnToDebug(){
         this.debug = true;
     }
-    // setter ; use for test
+
     public void setInStream(InputStream inStream) {
         this.inStream = inStream;
     }
 
     public void drawGame(Grid[][] grids){
-        //
-        int horizontalLength = grids[0].length;   // 列数
-        int verticalLength = grids.length;        // 行数
+        // 列数
+        int horizontalLength = grids[0].length;
+        // 行数
+        int verticalLength = grids.length;
 
         //最大行列数设定为20
         //没有翻开为 □ ，empty为■，BOOM为×，Flag为♠
@@ -117,7 +120,6 @@ public class GameView {
     	    bb = new int[]{-2, -2};
     	    System.out.println(e);
         }
-//        scan.close();
         return bb;
     }
 
@@ -140,8 +142,9 @@ public class GameView {
                     	coordinate = new int[]{-2,-2,-2};
                     	break;
                     }
-                    else 
-                    	continue;
+                    else {
+                        continue;
+                    }
                 }
                 
                 coordinate[0] = Integer.parseInt(buff[0]);
@@ -159,8 +162,9 @@ public class GameView {
                 if(debug) {
                     coordinate[2] = -1;// 第三个值返回-1 代表操作参数出界
                 }
-                else
+                else {
                     continue;
+                }
             }
             if (!(coordinate[0] <= bounds
                     && coordinate[0] >= 1
@@ -172,8 +176,9 @@ public class GameView {
                     coordinate[0] = -1;
                     //coordinate[1] = -1;
                 }
-                else
+                else {
                     continue;
+                }
             }
             // 此处的coor[0] coor[1]   ->  x+1 y+1
             else if (grids[coordinate[0]-1][coordinate[1]-1].isSelected()) {
@@ -182,8 +187,9 @@ public class GameView {
                 if(debug) {
                 	coordinate[1] = -1;
                 }
-                else
-                	continue;
+                else {
+                    continue;
+                }
             }
             break;
         }

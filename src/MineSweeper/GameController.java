@@ -1,7 +1,9 @@
 package MineSweeper;
 
+/**
+ * @author Xiong,Shen
+ */
 public class GameController {
-    //判断view传来的消息应该调用model的哪些方法
     public GameModel model;
     public GameView view;
     private boolean debug = false;
@@ -31,9 +33,11 @@ public class GameController {
             int[] pos = this.view.inputCo(args[0], this.model.grids);
             // 玩家给出的x,y 实际上为网格中的y-1,x-1
             // 2.执行玩家操作指令
-            if (pos[2] == 1) { // 翻开操作
+            if (pos[2] == 1) {
+                // 翻开操作
                 int flipResult = this.model.filpGrid(this.model.grids, pos[1]-1, pos[0]-1);
-            }else if(pos[2] == 2){  // 插旗操作
+            }else if(pos[2] == 2){
+                // 插旗操作
                 int flagResult = this.model.markGridFlag(this.model.grids, pos[1]-1, pos[0]-1);
             }
             // 3. 判断游戏是否结束

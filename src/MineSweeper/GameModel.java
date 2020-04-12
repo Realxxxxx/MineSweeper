@@ -1,11 +1,13 @@
 package MineSweeper;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Vector;
 import java.util.Random;
 
+
+/**
+ * @author Xiong,Shen
+ */
 public class GameModel {
     public int bounds;
     public Grid[][] grids;
@@ -212,33 +214,35 @@ public class GameModel {
         return 1;
     }
 
-    public void isGameWin(){
+    public void isGameWin() {
         // 游戏已经失败则直接返回
-        if (this.state == GameState.Fail){
+        if (this.state == GameState.Fail) {
             return;
         }
         // 判断游戏是否胜利
-        for (int x = 0; x < grids.length; x++)
-            for (int y = 0; y < grids[0].length; y++){
+        for (int x = 0; x < grids.length; x++){
+            for (int y = 0; y < grids[0].length; y++) {
                 // 只需存在BOOM+isflag 和 !BOOM+isSelected
                 Grid g = grids[x][y];
-                if ((g.getType() == GridType.BOOM && g.isFlag()) ||
-                     g.getType() != GridType.BOOM && g.isSelected()){
+                boolean isTypeRight = (g.getType() == GridType.BOOM && g.isFlag()) ||
+                        g.getType() != GridType.BOOM && g.isSelected();
+                if (isTypeRight) {
                     continue;
-                }
-                else {
+                } else {
                     this.state = GameState.InGame;
                     return;
                 }
             }
+        }
         // 全部通过之后
         this.state = GameState.Win;
 
     }
 
     public boolean isBooming(Grid[][] grids, int x, int y){
-        if (grids[x][y].getType() == GridType.BOOM && grids[x][y].isSelected())
+        if (grids[x][y].getType() == GridType.BOOM && grids[x][y].isSelected()) {
             return true;
+        }
         return false;
     }
 
@@ -269,19 +273,23 @@ public class GameModel {
     // 插旗操作
     public int markGridFlag(Grid[][] grids, int x, int y){
         int result ;
-        if (grids[x][y].isSelected()) { // 该格子已经被翻开
+        if (grids[x][y].isSelected()) {
+            // 该格子已经被翻开
             System.out.println("该位置已经被打开");
-            result = 1; // 插旗翻开的格子
-
+            // 插旗翻开的格子
+            result = 1;
         } else if (grids[x][y].isFlag()){
             System.out.println("该位置已经被插旗,即将拔旗");
             grids[x][y].setFlag(false);
             this.grids = grids;
-            result = 2;// 拔旗
-        } else { // 插旗未打开的格子
+            // 拔旗
+            result = 2;
+        } else {
+            // 插旗未打开的格子
             grids[x][y].setFlag(true);
             this.grids = grids;
-            result = 0;// 成功插旗
+            // 成功插旗
+            result = 0;
         }
         return result;
     }

@@ -1,5 +1,9 @@
 package MineSweeper;
 
+/**
+ * @author Xiong,Shen
+ */
+
 public enum GridType {
     //炸弹格
     BOOM,
