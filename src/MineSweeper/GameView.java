@@ -60,9 +60,9 @@ public class GameView {
                 if (griddraw.isFlag()) {
                     System.out.print(" F ");
                 }
-                else if (!griddraw.isSelected())
+                else if (!griddraw.isSelected()) {
                     System.out.print(" ■ ");
-                else if (griddraw.getType() == GridType.EMPTY)
+                } else if (griddraw.getType() == GridType.EMPTY)
                     System.out.print(" □ ");
                 else if (griddraw.getType() == GridType.BOOM)
                     System.out.print(" × ");
